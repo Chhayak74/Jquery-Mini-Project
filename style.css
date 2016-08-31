@@ -90,11 +90,11 @@ button#create_resume {
 	color: transparent;
 }
 
-#static_button {
+/*#static_button {
 	position: fixed;
 }
-
-#preview {
+*/
+#preview1 , #preview2 {
 	margin-top: 17vw;
 	color: #6f1bda;
     size: 161;

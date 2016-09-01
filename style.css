@@ -16,6 +16,10 @@ body {
 	border :0;
 }
 
+#dashboard , #form , #show_templates {
+	font-family: 'Vampiro One', cursive;
+}
+
 /*end header*/
 
 /*dashboard style*/
@@ -136,7 +140,8 @@ button#create_resume {
 
 button#preview1 , button#preview2 {
 	background-color: #2fb8ae;
-	font-size: xx-large;
+	font-size: 1.5vw;
+	color: white;
 }
 
 
@@ -261,7 +266,7 @@ hr {
 #btn_pdf {
 	background-color: #2fb8ae;
     color: snow;
-    border-color: #adadad;
+    border: #0b1c35 solid 2px;
     font-size: xx-large;
     font-weight: 700;
 

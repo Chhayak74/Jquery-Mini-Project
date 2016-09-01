@@ -9,7 +9,9 @@
             $("#form3").hide();
             $("#form1").show();
             $("#result_container1").hide();
+            $('body').css({"background-image":"url('./images/vec.jpg')" , "background-size":"cover"});
             //$("#result_container2").hide();
+          
             
 
             
@@ -25,8 +27,10 @@
                 $("#templates_part1").hide();
                 $("#templates_part2").hide();
                 $("#result_container1").hide();
-                //$("#result_container2").hide();
-                $('#dash_container').hide();
+                $('body').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"cover"});
+                /*$('body #form1 , body #form4').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"cover"});
+                $('body #form1 , body #form4').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"contain"});
+*/                $('#dash_container').hide();
 
             }); //end get started
 
@@ -40,7 +44,7 @@
                 $('li#dash').removeClass('active');
                 $("#forms").hide();
                 $("#result_container1").hide();
-                //$("#result_container2").hide();
+                $('body').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"contain"});
                 $('#dash_container').hide();
 
             });//end Templates
@@ -56,7 +60,7 @@
                 $("#templates_part1").hide();
                 $("#templates_part2").hide();
                 $("#result_container1").hide();
-                //$("#result_container2").hide();
+                $('body').css({"background-image":"url('./images/vec.jpg')" , "background-size":"cover"});
                 $('#dash_container').show();
             });//end Dashboard
 
@@ -74,7 +78,7 @@
          $("#form3").hide();
          $("#form4").hide();
          $("#result_container1").hide();
-         //$("#result_container2").hide();
+         $('body').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"cover"});
          $('#dash_container').hide();
          event.preventDefault();
 
@@ -90,7 +94,7 @@
          $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
          $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
          $('#marker4 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-
+         $('body').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"contain"});
          $('#form2').show();
          $("#form1").hide();
          $("#form3").hide();
@@ -107,7 +111,7 @@
          $('#marker2 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
          $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
          $('#marker4 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-
+         $('body').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"contain"});
          $('#form3').show();
          $("#form1").hide();
          $("#form2").hide();
@@ -124,7 +128,7 @@
          $('#marker2 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
          $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
          $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-
+         $('body').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"cover"});
          $('#form4').show();
          $("#form1").hide();
          $("#form2").hide();
@@ -260,7 +264,7 @@
       $("#form3").hide();
       $("#form1").hide();
       $("#result_container1").show();
-      //$("#result_container2").hide();
+      $('body').css({"background-image":"url('./images/vec.jpg')" , "background-size":"contain"});
       event.preventDefault();
 
       });
@@ -710,7 +714,7 @@
              $('li#dash').removeClass('active');
              $("#forms").hide();
              $("#result_container1").hide();
-             //$("#result_container2").hide();
+             $('body').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"contain"});
              $('#dash_container').hide();
              return false;
          });

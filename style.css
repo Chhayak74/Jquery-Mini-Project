@@ -1,12 +1,14 @@
 body {
 	background-color: #b05add;
 	margin-bottom: 5vw;
+	background-image: url('./images/vec.jpg');
+	background-size: cover;
 }
 
 /*   Header  */
 
-.navbar-brand img{
-	float: left;
+.navbar-brand {
+	font-family: 'Vampiro One', cursive;
 }
 
 #header-nav {
@@ -18,14 +20,31 @@ body {
 
 /*dashboard style*/
 
+#dash_container {
+	margin-top: 14vw;
+}
+
 #text_dash {
 	font-weight: 300;
-	color: white;
-	font-size: 4vw;
+	color: #a03e2e;
+	font-size: 5vw;
+	font-family: 'Vampiro One', cursive;
 }
+
+#text_dash_des {
+   font-family: 'Kaushan Script', cursive;
+   font-size: 4vw;
+}
+
+#text_dash_sub {
+    font-family: 'Atma', cursive;
+    font-size: 2vw;
+}
+
 
 button#create_resume {
 	font-size: xx-large;
+	background-color: #2fb8ae;
 }
 
 /* end dashboard style*/
@@ -90,10 +109,7 @@ button#create_resume {
 	color: transparent;
 }
 
-/*#static_button {
-	position: fixed;
-}
-*/
+
 #preview1 , #preview2 {
 	margin-top: 17vw;
 	color: #6f1bda;
@@ -116,6 +132,11 @@ button#create_resume {
 	border : 2px white;
 	position: absolute;
 	border-radius: 1px; 
+}
+
+button#preview1 , button#preview2 {
+	background-color: #2fb8ae;
+	font-size: xx-large;
 }
 
 
@@ -238,11 +259,12 @@ hr {
 }
 
 #btn_pdf {
-	background-color: #7a3590;
+	background-color: #2fb8ae;
     color: snow;
     border-color: #adadad;
-    font-size: 2vw;
+    font-size: xx-large;
     font-weight: 700;
+
 }
 
 .glyphicon.glyphicon-save-file {

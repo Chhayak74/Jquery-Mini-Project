@@ -27,7 +27,7 @@
                 $("#templates_part1").hide();
                 $("#templates_part2").hide();
                 $("#result_container1").hide();
-                $('body').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"cover"});
+                $('body').css({"background-image":"url('./images/vec2.jpg')" , "background-size":"cover"});
                 /*$('body #form1 , body #form4').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"cover"});
                 $('body #form1 , body #form4').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"contain"});
 */                $('#dash_container').hide();
@@ -44,7 +44,7 @@
                 $('li#dash').removeClass('active');
                 $("#forms").hide();
                 $("#result_container1").hide();
-                $('body').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"contain"});
+                $('body').css({"background-image":"url('./images/vec2.jpg')" , "background-size":"cover"});
                 $('#dash_container').hide();
 
             });//end Templates
@@ -78,7 +78,7 @@
          $("#form3").hide();
          $("#form4").hide();
          $("#result_container1").hide();
-         $('body').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"cover"});
+         // $('body').css({"background-image":"url('./images/vec2.jpg')" , "background-size":"cover"});
          $('#dash_container').hide();
          event.preventDefault();
 
@@ -94,7 +94,7 @@
          $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
          $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
          $('#marker4 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-         $('body').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"contain"});
+         // $('body').css({"background-image":"url('./images/vec2.jpg')" , "background-size":"contain"});
          $('#form2').show();
          $("#form1").hide();
          $("#form3").hide();
@@ -111,7 +111,7 @@
          $('#marker2 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
          $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
          $('#marker4 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-         $('body').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"contain"});
+         // $('body').css({"background-image":"url('./images/vec2.jpg')" , "background-size":"contain"});
          $('#form3').show();
          $("#form1").hide();
          $("#form2").hide();
@@ -128,7 +128,7 @@
          $('#marker2 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
          $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
          $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-         $('body').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"cover"});
+         // $('body').css({"background-image":"url('./images/vec2.jpg')" , "background-size":"cover"});
          $('#form4').show();
          $("#form1").hide();
          $("#form2").hide();
@@ -264,7 +264,7 @@
       $("#form3").hide();
       $("#form1").hide();
       $("#result_container1").show();
-      $('body').css({"background-image":"url('./images/vec.jpg')" , "background-size":"contain"});
+      $('body').css({"background-image":"url('./images/vec.jpg')" , "background-size":"cover"});
       event.preventDefault();
 
       });
@@ -714,12 +714,14 @@
              $('li#dash').removeClass('active');
              $("#forms").hide();
              $("#result_container1").hide();
-             $('body').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"contain"});
+             // $('body').css({"background-image":"url('./images/vec2.jpg')" , "background-size":"contain"});
              $('#dash_container').hide();
              return false;
          });
      });
- 
+
+
+     
 
 
 

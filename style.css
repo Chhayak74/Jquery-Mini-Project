@@ -47,8 +47,9 @@ body {
 
 
 button#create_resume {
-	font-size: xx-large;
-	background-color: #2fb8ae;
+	font-size: 2vw;
+    background-color: #2fb8ae;
+    border-color: white;
 }
 
 /* end dashboard style*/
@@ -56,6 +57,34 @@ button#create_resume {
 
 
 /*template styling*/
+
+#temp_head h1.text-center {
+	margin-left: -1vw;
+    width: 101%;
+    padding: 1.5vw;
+    height: 9vw;
+    border: 2px solid #1b3864;
+    color: white;
+    background-color: #1b3864;
+    border-radius: 4vw;
+    font-size: 4vw;
+}
+
+#temp_head {
+	color:white;
+	font-size:4vw; 
+	font-family:'Kaushan Script', cursive; 
+	
+}
+
+.temp_subhead {
+	width:70%; 
+	margin-left: 14%; 
+	color:#1b3864; 
+	font-size: 3vw; 
+	font-family:'Kaushan Script', cursive;"
+	
+}
 
 #temp_2 {
 	width: 34vw;
@@ -106,6 +135,7 @@ button#create_resume {
 #temp1_text , #temp2_text ,#temp3_text  ,#temp4_text {
 	color: transparent;
 	margin-top: 17vw;
+	font-size: 4vw;
 }
 
 .glyphicon.glyphicon-ok.ok1,.glyphicon.glyphicon-ok.ok2, .glyphicon.glyphicon-ok.ok3 ,.glyphicon.glyphicon-ok.ok4 {
@@ -142,6 +172,7 @@ button#preview1 , button#preview2 {
 	background-color: #2fb8ae;
 	font-size: 1.5vw;
 	color: white;
+	padding: 2px;
 }
 
 
@@ -150,6 +181,17 @@ button#preview1 , button#preview2 {
 
 
 /*Form Styling*/
+
+#forms h1.text-center {
+	margin-left: 3vw;
+    width: 94%;
+    padding: 1.5vw;
+    height: 9vw;
+    border: 2px solid #1b3864;
+    color: white;
+    background-color: #1b3864;
+    border-radius: 4vw;
+}
 
 #step{
 	padding-top: 10px;
@@ -252,6 +294,11 @@ hr {
 	color: white;
 }
 
+.btn-primary {
+	background-color: #b05add;
+    border-color: #5e4c86;
+}
+
 /*end form styling*/
 
 /*Result Page*/
@@ -266,8 +313,8 @@ hr {
 #btn_pdf {
 	background-color: #2fb8ae;
     color: snow;
-    border: #0b1c35 solid 2px;
-    font-size: xx-large;
+    border: white solid 2px;
+    font-size: 2vw;
     font-weight: 700;
 
 }
@@ -305,5 +352,6 @@ hr {
 
 /*For extra small screen size*/
 @media screen and (max-width: 767px){
+
   
 }/*end  extra small*/

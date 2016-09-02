@@ -144,8 +144,23 @@ button#create_resume {
 }
 
 
-#preview1 , #preview2 {
-	margin-top: 17vw;
+#preview1 , #preview2 , #preview3 , #preview4 {
+	margin-left: 9vw;
+	background-color: #2fb8ae;
+	font-size: 1.5vw;
+	color: white;
+	display: block;
+	padding: 2px;
+    size: 161;
+    width: 14vw;
+    height: 5vw;
+    font-weight: 700;
+}
+
+/*
+ #preview1 {
+	margin-top: 23vw;
+	margin-left: -60vw;
 	color: #6f1bda;
     size: 161;
     width: 14vw;
@@ -154,6 +169,42 @@ button#create_resume {
 	font-size: 1.4vw;
 	position: relative;
 }
+
+ #preview2 {
+	margin-top: 23vw;
+	margin-right: -60vw;
+	color: #6f1bda;
+    size: 161;
+    width: 14vw;
+    height: 5vw;
+    font-weight: 700;
+	font-size: 1.4vw;
+	position: relative;
+}
+
+ #preview3 {
+	margin-bottom: -30vw;
+	margin-left: -58vw;
+	color: #6f1bda;
+    size: 161;
+    width: 14vw;
+    height: 5vw;
+    font-weight: 700;
+	font-size: 1.4vw;
+	position: relative;
+}
+
+ #preview4 {
+	margin-bottom: -30vw;
+	margin-right: -60vw;
+	color: #6f1bda;
+    size: 161;
+    width: 14vw;
+    height: 5vw;
+    font-weight: 700;
+	font-size: 1.4vw;
+	position: relative;
+}*/
 
 .selected {
 	border: 3px solid aqua;
@@ -168,12 +219,12 @@ button#create_resume {
 	border-radius: 1px; 
 }
 
-button#preview1 , button#preview2 {
+/*button#preview1 , button#preview2 {
 	background-color: #2fb8ae;
 	font-size: 1.5vw;
 	color: white;
 	padding: 2px;
-}
+}*/
 
 
 /*end template styling*/
@@ -290,8 +341,8 @@ ul>li {
 	box-shadow: 2px white;
 }
 
-hr {
-	color: white;
+#forms hr {
+	border-color: white;
 }
 
 .btn-primary {

@@ -10,6 +10,7 @@
             $("#form1").show();
             $("#result_container1").hide();
             $('body').css({"background-image":"url('./images/vec.jpg')" , "background-size":"cover"});
+            $('#preview1 , #preview2, #preview3, #preview4' ).hide();
             //$("#result_container2").hide();
           
             
@@ -28,9 +29,7 @@
                 $("#templates_part2").hide();
                 $("#result_container1").hide();
                 $('body').css({"background-image":"url('./images/vec2.jpg')" , "background-size":"cover"});
-                /*$('body #form1 , body #form4').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"cover"});
-                $('body #form1 , body #form4').css({"background-image":"url('./images/vecform.jpg')" , "background-size":"contain"});
-*/                $('#dash_container').hide();
+                $('#dash_container').hide();
 
             }); //end get started
 
@@ -211,6 +210,10 @@
        $('#result2').hide();
        $('#result3').hide();
        $('#result4').hide();
+       $('a button#preview1').show();
+       $('a button#preview2').hide();
+       $('a button#preview3').hide();
+       $('a button#preview4').hide();
      });
 
      $('#temp2_text').on('click' , function(){
@@ -222,6 +225,10 @@
         $('#result1').hide();
         $('#result3').hide();
         $('#result4').hide();
+        $('a button#preview2').show();
+        $('a button#preview1').hide();
+        $('a button#preview3').hide();
+        $('a button#preview4').hide();
      });
 
      $('#temp3_text').on('click' , function(){
@@ -233,6 +240,10 @@
         $('#result1').hide();
         $('#result2').hide();
         $('#result4').hide();
+        $('a button#preview3').show();
+        $('a button#preview2').hide();
+        $('a button#preview1').hide();
+        $('a button#preview4').hide();
      });
 
      $('#temp4_text').on('click' , function(){
@@ -244,17 +255,21 @@
         $('#result1').hide();
         $('#result2').hide();
         $('#result3').hide();
+        $('a button#preview4').show();
+        $('a button#preview2').hide();
+        $('a button#preview3').hide();
+        $('a button#preview1').hide();
      });
 
-     $('#temp1_text , #temp2_text, #temp3_text, #temp4_text').on('click' , function(event){
+     // $('#temp1_text , #temp2_text, #temp3_text, #temp4_text').on('click' , function(event){
          
-         $('a button#preview1 , a button#preview2').toggleClass('disabled');
-         event.preventDefault();
+     //     $('a button#preview1 , a button#preview2').toggleClass('disabled');
+     //     event.preventDefault();
 
-     });
-
-
-     $('#preview1 , #preview2').on('click' , function(event){
+     // });
+  
+    
+     $('#preview1 , #preview2, #preview3 , #preview4').on('click' , function(event){
 
       $("#forms").hide();
       $("#templates_part1").hide();
@@ -301,7 +316,7 @@
             '</style>'+
         '</head>'+
         '<body style="border: 1px solid; padding : 10px; margin:10px;">'+
-        '<h2 style="font-weight:normal">' + user.fullname +'<br>' + user.high_deg +' ,'+ user.high_spec  +', '+ user.high_year +', <br>'+ user.mob_no+', '+ user.email +'</h2>'+
+        '<h2 style="font-weight:normal;font">' + user.fullname +'<br>' + user.high_deg +' ,'+ user.high_spec  +', '+ user.high_year +', <br>'+ user.mob_no+', '+ user.email +'</h2>'+
         '<hr>'+
         '<h3>WORK EXPERIENCE</h3>'+
         '<h4>Past Job Experience</h4>'+

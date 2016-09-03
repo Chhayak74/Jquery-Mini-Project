@@ -67,6 +67,103 @@
             //end navigation button control
 
 
+     
+     /* Form Controls*/
+
+     //Add_More Button Control
+     
+     $('form#work').submit( function(event){
+
+        var len = $(this).serializeArray().length;
+        var div = len/3;
+        // $('#w1').text(len);
+        $('#w'+div).html(
+              
+                     '<div class="form-group">'+
+                         '<h4>Job'+ (div+1) + ' :</h4>'+
+                         '<label for="" >Job Profile</label>'+
+                         '<input type="text" class="form-control"  placeholder="" name="job_profile">'+
+                         '<label for="skills">Skills Involved</label>'+
+                         '<input type="text" class="form-control" placeholder="" name="job_skills">'+
+                         '<label for="company" >Company Name</label>'+
+                         '<input type="text" class="form-control"  placeholder="" name="job_company">'+
+                      '</div>'
+
+            );
+        
+        if(len==12) {
+            $('#btn_work').on('click' , function(){
+                alert('We recommend you to mention only those Jobs where your role was more significant and showcases your leadership skills or helps you stand out among your peers.');
+            });
+        }
+        event.preventDefault();
+
+     }); 
+
+
+     $('form#projects').submit( function(event){
+
+        var len = $(this).serializeArray().length;
+        var div = len/2;
+        // $('#w1').text(len);
+        $('#p'+div).html(
+              
+                     '<div class="form-group">'+
+                         '<h4>Project'+ (div+1) +'</h4>'+
+                         '<label for="pro1_name" >Name of Project</label>'+
+                         '<input type="text" class="form-control"  placeholder="" name="pro_name">'+
+                         '<label for="pro1_skills" >Skills Involved</label>'+
+                         '<input type="text" class="form-control"  placeholder="" name="pro_skills">'+
+                      '</div>'
+
+            );
+        
+        if(len==10) {
+            $('#btn_project').on('click' , function(){
+                alert('We recommend you to mention only those Projects where your role was more significant and showcases your leadership skills or helps you stand out among your peers.');
+            });
+        }
+        event.preventDefault();
+
+     });
+
+
+     $('form#achievement').submit( function(event){
+
+        var len = $(this).serializeArray().length;
+
+        $('#a'+len).html('<input type="text" class="form-control"  placeholder="Achievement..." name="achievement"><br>');
+        
+        if(len==5) {
+            $('#btn_achievement').on('click' , function(){
+                alert('We recommend you to mention only those Achievements where your role was more significant and showcases your leadership skills or helps you stand out among your peers.');
+            });
+        }
+        event.preventDefault();
+
+     }); 
+
+     $('form#curricular').submit( function(event){
+
+        var len = $(this).serializeArray().length;
+
+        $('#c'+len).html('<input type="text" class="form-control"  placeholder="Acitvity and achievements..." name="curricular"><br>');
+        
+        if(len==5) {
+            $('#btn_curricular').on('click' , function(){
+                alert('We recommend you to mention only those Achievements where your role was more significant and showcases your leadership skills or helps you stand out among your peers.');
+            });
+        }
+        event.preventDefault();
+
+     }); 
+
+
+     // end Add_More
+
+
+     // Form Pagination
+
      $('#marker1 , button#pre_exp').on('click' , function (event) {
          $('#marker1 span.glyphicon.glyphicon-map-marker').addClass('active_step');
          $('#marker2 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
@@ -82,10 +179,6 @@
          event.preventDefault();
 
      });
-
-
-
-     // Form Pagination
 
 
      $('#marker2 , button#next_primary , button#pre_edu').on('click' , function (event) {
@@ -139,6 +232,30 @@
 
      });
      //end of form pagination
+
+
+     //Media Query
+     
+     if (window.matchMedia("(max-width: 767px)").matches) {
+       /* the viewport is at most 767 pixels wide */
+       $('#form_x , #form_xii').removeClass('form-inline');
+     } else {
+       /* the viewport is more than 767 pixels wide */
+       $('#form_x , #form_xii').addClass('form-inline');
+     }
+
+
+     if (window.matchMedia("(min-width: 768px)").matches) {
+       /* the viewport is at least 768 pixels wide */
+       $('#form_x , #form_xii').addClass('form-inline');
+     } else {
+       /* the viewport is less than 768 pixels wide */
+       $('#form_x , #form_xii').removeClass('form-inline');
+     }
+
+     //end media query
+
+     /* end form controls*/
 
 
      //Template effetcs
@@ -260,13 +377,6 @@
         $('a button#preview3').hide();
         $('a button#preview1').hide();
      });
-
-     // $('#temp1_text , #temp2_text, #temp3_text, #temp4_text').on('click' , function(event){
-         
-     //     $('a button#preview1 , a button#preview2').toggleClass('disabled');
-     //     event.preventDefault();
-
-     // });
   
     
      $('#preview1 , #preview2, #preview3 , #preview4').on('click' , function(event){
@@ -714,9 +824,10 @@
      };
 
      $(function() {
-         $('form').submit(function() {
+         $('form#final').submit(function() {
             var userobj = JSON.stringify($('form').serializeObject());
             var user = JSON.parse(userobj);
+            console.log(user);
              //$('#result1 , #result2').text(userobj);
              $('#result1').html(template1html(user));
              $('#result2').html(template2html(user));

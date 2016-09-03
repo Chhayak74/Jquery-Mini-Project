@@ -148,32 +148,30 @@
 					  <div class="form-group">
 						 <label for="name" >Full Name</label>
 	                     <input type="text" class="form-control" name="fullname"  placeholder="">
-					  </div>
-					  <div class="form-group">
-						 <label for="email">Email address</label>
+	                     <label for="email">Email address</label>
 	                     <input type="email" class="form-control" name="email" placeholder="">
-					  </div>
-					  <div class="form-group">
-						 <label for="mobie number" >Mobile Number</label>
+                         <label for="mobie number" >Mobile Number</label>
 	                     <input type="number" class="form-control" name="mob_no" placeholder="">
 					  </div>
 					  <div class="form-group">
-						 <label for="education" >Highest Educational Qualification</label>
+						 <h3>Highest Educational Qualification</h3>
 						 <br>
-	                     <div class="form-group">
 						 <label for="degree" >Degree</label>
 						 <input type="text" class="form-control" name="high_deg" placeholder="">
-						 </div>
-						 <div class="form-group">
-						 <label for="specialization" >Specialization</label>
+                         <label for="specialization" >Specialization</label>
 						 <input type="text" class="form-control" name="high_spec" placeholder="">
-						 </div>
-						 <div class="form-group">
-						 <label for="year of comlpetion" >Year of Completion</label>
+                         <label for="year of comlpetion" >Year of Completion</label>
 						 <input type="number" class="form-control" name="high_year" placeholder="">
-						 </div>
+                         <label for="board" >Board/University</label>
+				         <input type="text" class="form-control"  placeholder=""  name="gradboard">
+                         <label for="marks" >Marks in % </label>
+	                     <input type="number" class="form-control"  placeholder="" name="gradmarks">
+                         <label for="achievement" >Achievement/Rank/Percentile</label>
+	                     <input type="text" class="form-control"  placeholder="" name="gradper">
 					  </div>
 					  <button type="button" class="btn btn-default" id="next_primary">Next</button>
+                      <br>
+					  <br>
 				  </form>
 				</div>
 			</div>
@@ -192,71 +190,75 @@
 					<span id="name">Experience <a href="" id="" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-info-sign " class="pull-right" aria-hidden="true"></span></a></span>
 					<hr>
 				</div>
-				<div class="form_body">
-				  <form>
-					 
-				  <form>
-                   <h3>Work Experience :</h3>
+				<div class="form_body">	
+
+				  <!-- Work Experience --> 
+				  <form id="work"> 
+                      <h3>Work Experience :</h3>
 					  <div class="form-group">
+					     <h4>Job 1 :</h4>
 						 <label for="" >Job Profile</label>
 	                     <input type="text" class="form-control"  placeholder="" name="job_profile">
-	                  </div>
-	                  <div class="form-group">
 	                     <label for="skills">Skills Involved</label>
 	                     <input type="text" class="form-control" placeholder="" name="job_skills">
-	                  </div>
-	                  <div class="form-group">
-	                     <label for="company" >Company Name</label>
+                         <label for="company" >Company Name</label>
 	                     <input type="text" class="form-control"  placeholder="" name="job_company">
-					  </div>
+	                  </div>
+	                  <div id="w1"></div>
+	                  <div id="w2"></div>
+	                  <div id="w3"></div>
+	                  <div id="w4"></div>
+	                  <button type="submit" class="btn glyphicon glyphicon-plus" id="btn_work"> Add More</button><br>
+                  </form>
+                  <!-- end Work Experience -->
+
+
+	              <!-- Other Projects -->
+	              <form id="projects">
 					  <h3>Other Projects :</h3>
-					  <label for="pro1" >Project 1</label>
 					  <div class="form-group">
+					     <h4>Project 1</h4>
 						 <label for="pro1_name" >Name of Project</label>
-	                     <input type="text" class="form-control"  placeholder="" name="pro1_name">
-	                  </div>
-	                  <div class="form-group">
+	                     <input type="text" class="form-control"  placeholder="" name="pro_name">
 	                     <label for="pro1_skills" >Skills Involved</label>
-	                     <input type="text" class="form-control"  placeholder="" name="pro1_skills">
-					  </div>
-					  <label for="pro2" >Project 2</label>
-					  <div class="form-group">
-						 <label for="pro2_name" >Name of Project</label>
-	                     <input type="text" class="form-control"  placeholder="" name="pro2_name">
+	                     <input type="text" class="form-control"  placeholder="" name="pro_skills">
 	                  </div>
-	                  <div class="form-group">
-	                     <label for="pro2_skills" >Skills Involved</label>
-	                     <input type="text" class="form-control"  placeholder="" name="pro2_skills">
-					  </div>
-					  <label for="pro3" >Project 3</label>
-					  <div class="form-group">
-						 <label for="pro3_name" >Name of Project</label>
-	                     <input type="text" class="form-control"  placeholder="" name="pro3_name">
-	                  </div>
-	                  <div class="form-group">
-	                     <label for="pro3_skills" >Skills Involved</label>
-	                     <input type="text" class="form-control"  placeholder="" name="pro3_skills">
-					  </div>
+	                  <div id="p1"></div>
+	                  <div id="p2"></div>
+	                  <div id="p3"></div>
+	                  <div id="p4"></div>
+	                  <button type="submit" class="btn glyphicon glyphicon-plus" id="btn_project"> Add More</button>
+	              </form>
+	              <!-- end Other Projects -->
+
+                  <!-- Other Achievements / Leadership Roles -->
+				  <form id="achievement">  
 					  <h3>Other Achievements / Leadership Roles</h3>
 					  <div class="form-group">
-					  <label></label>
-	                  <input type="text" class="form-control"  placeholder="Achievement..." name="achievement1">
+	                  <input type="text" class="form-control"  placeholder="Achievement..." name="achievement"><br>
+	                  <div id="a1"></div>
+	                  <div id="a2"></div>
+	                  <div id="a3"></div>
+	                  <div id="a4"></div>
 	                  </div>
-	                  <div class="form-group">
-	                  <label></label>
-	                  <input type="text" class="form-control"  placeholder="Achievement..." name="achievement2">
-	                  </div>
-	                  <div class="form-group">
-	                  <label></label>
-	                  <input type="text" class="form-control"  placeholder="Achievement..." name="achievement3">
-	                  </div>
+	                  
+	                  <button type="submit" class="btn glyphicon glyphicon-plus" id="btn_achievement"> Add More</button>
+	              </form>
+	              <!-- end Other Achievements / Leadership Roles -->
+                  <br>
+                  <br>
+                  <!-- Main Buttons -->
+                  <form class="text-center">
 					  <button type="button" class="btn btn-default" id="next_exp">Next</button>
 	                  <button type="button" class="btn btn-default" id="pre_exp">Previous</button>
-
 				  </form>
+                  <br>
 				</div>
+				<!-- end form body -->
 			</div>
-		</div>
+			<!-- end .form2 -->
+		</div> 
+		<!-- end row -->
 	</div>
 	<!--  End of Form2 -->
 
@@ -274,65 +276,34 @@
 				<div class="form_body">
 				  <form>
 				      <h3>Matriculation/10th/Higher Secondary Exam :</h3>
-				      <div class="form-group">
-				         <label for="board" >Board/University</label>
-				         <input type="text" class="form-control"  placeholder=""  name="xthboard">
+				      <div class="form-group form-inline" id="form_x">
+				         <label for="board" ></label>
+				         <input type="text" class="form-control" id="board" placeholder="Board/University"  name="xthboard">
+				         <label for="passingyear" > </label>
+	                     <input type="number" class="form-control" id="year" name="xthyear" placeholder="Year of passing">
+                         <label for="marks" ></label>
+	                     <input type="number" class="form-control" id="percent" placeholder="Marks in % " name="xthmarks">
+                         <label for="10thachievement" ></label>
+	                     <input type="text" class="form-control" id="rank" placeholder="Achievement/Rank/Percentile" name="xthper">
 				      </div>
-					  <div class="form-group">
-						 <label for="passingyear" >Year of passing </label>
-	                     <input type="number" class="form-control" name="xthyear" placeholder="">
-					  </div>
-					  <div class="form-group">
-						 <label for="marks" >Marks in % </label>
-	                     <input type="number" class="form-control"  placeholder="" name="xthmarks">
-					  </div>
-					  <div class="form-group">
-						 <label for="10thachievement" >Achievement/Rank/Percentile</label>
-	                     <input type="text" class="form-control"  placeholder="" name="xthper">
-					  </div>
+				
 					  <h3>Intermediate/10+2/Pre-University/Diploma Exam :</h3>
-					  <form >
-					  	<div class="form-group">
-				         <label for="board" >Board/University</label>
-				         <input type="text" class="form-control"  placeholder=""  name="xiithboard">
+					  <div class="form-group form-inline" id="form_xii">
+				         <label for="board" ></label>
+				         <input type="text" class="form-control" id="board"  placeholder="Board/University"  name="xiithboard">
+				         <label for="passingyear" > </label>
+	                     <input type="number" class="form-control" id="year" name="xiithyear" placeholder="Year of passing">
+                         <label for="marks" > </label>
+	                     <input type="number" class="form-control" id="percent" placeholder="Marks in %" name="xiithmarks">
+                         <label for="10thachievement" ></label>
+	                     <input type="text" class="form-control" id="rank" placeholder="Achievement/Rank/Percentile" name="xiithper">
 				      </div>
-					  <div class="form-group">
-						 <label for="passingyear" >Year of passing </label>
-	                     <input type="number" class="form-control" name="xiithyear" placeholder="">
-					  </div>
-					  <div class="form-group">
-						 <label for="marks" >Marks in % </label>
-	                     <input type="number" class="form-control"  placeholder="" name="xiithmarks">
-					  </div>
-					  <div class="form-group">
-						 <label for="10thachievement" >Achievement/Rank/Percentile</label>
-	                     <input type="text" class="form-control"  placeholder="" name="xiithper">
-					  </div>
-					  </form>
-
-					  <h3>Graduation :</h3>
-					  <form >
-					  	<div class="form-group">
-				         <label for="board" >Board/University</label>
-				         <input type="text" class="form-control"  placeholder=""  name="gradboard">
-				      </div>
-					  <div class="form-group">
-						 <label for="passingyear" >Year of passing </label>
-	                     <input type="number" class="form-control" name="gradyear" placeholder="">
-					  </div>
-					  <div class="form-group">
-						 <label for="marks" >Marks in % </label>
-	                     <input type="number" class="form-control"  placeholder="" name="gradmarks">
-					  </div>
-					  <div class="form-group">
-						 <label for="achievement" >Achievement/Rank/Percentile</label>
-	                     <input type="text" class="form-control"  placeholder="" name="gradper">
-					  </div>
-					  </form>
-					 
+				
+					 <br>
 					  <button type="button" class="btn btn-default" id="next_edu">Next</button>
 	                  <button type="button" class="btn btn-default" id="pre_edu">Previous</button>
-
+	                  <br>
+                     <br>
 				  </form>
 				</div>
 			</div>
@@ -351,18 +322,26 @@
 					<hr>
 				</div>
 				<div class="form_body">
-				  <form>
-					  <input type="text" class="form-control"  placeholder="Acitvity and achievements..." name="curricular1">
-	                  <br>
-	                  <input type="text" class="form-control"  placeholder="Acitvity and achievements..." name="curricular2">
-	                  <br>
-	                  <input type="text" class="form-control"  placeholder="Acitvity and achievements..." name="curricular3">
-	                  <br>
+				  <form id="curricular">
+					  <input type="text" class="form-control"  placeholder="Acitvity and achievements..." name="curricular"><br>
+					  <div id="c1"></div>
+	                  <div id="c2"></div>
+	                  <div id="c3"></div>
+	                  <div id="c4"></div>
+
+	                  <button type="submit" class="btn glyphicon glyphicon-plus" id="btn_curricular"> Add More</button>
+	              </form>
+                  
+                  <br>
+                  <br>
+
+	              <form id="final">
 
 					  <button type="submit" class="btn btn-default btn-primary" id="done">Done</button>
 	                  <button type="button" class="btn btn-default" id="pre_curricular">Previous</button>
 
 				  </form>
+				  <br>
 				</div>
 			</div>
 		</div>

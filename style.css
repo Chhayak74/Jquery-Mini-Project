@@ -3,6 +3,7 @@ body {
 	margin-bottom: 5vw;
 	background-image: url('./images/vec.jpg');
 	background-size: cover;
+	font-size: 12px;
 }
 
 /*   Header  */
@@ -319,35 +320,71 @@ ul>li {
 
 
 .form{
-	height: 450px;
+	/*height: 450px;*/
 	background-color: #5e4c86; 
 	box-shadow: 2px white;
 }
 .form1{
-	height: 700px;
+	/*height: 700px;*/
 	background-color: #5e4c86; 
 	box-shadow: 2px white;
 }
 
 .form2{
-	height: 1300px;
+	/*height: 1300px;*/
 	background-color: #5e4c86; 
 	box-shadow: 200px white;
 }
 
 .form3{
-	height: 1300px;
+	/*height: 1300px;*/
 	background-color: #5e4c86; 
 	box-shadow: 2px white;
+}
+
+form h3 {
+	font-size: 2vw;
+}
+
+form h4 {
+	font-size: 1.5vw;
 }
 
 #forms hr {
 	border-color: white;
 }
 
+/*#board ,#year, #percent ,#rank {
+    width: 24%;
+    font-size: 12px;
+    padding: 5px;
+}*/
+/*#year {
+    width: 20%;	
+    font-size: 9px;
+    padding: 5px;
+} 
+#percent {
+	width: 20%;
+	font-size: 9px;
+    padding: 5px;
+}
+#rank {
+	width: 20%;
+	font-size: 9px;
+    padding: 5px;
+}*/
+
 .btn-primary {
 	background-color: #b05add;
     border-color: #5e4c86;
+}
+
+.btn.glyphicon.glyphicon-plus {
+	background: #ff9734;
+    border: 1px solid white;
+    color: white;
+    word-spacing: -9px;
 }
 
 /*end form styling*/
@@ -382,12 +419,36 @@ ul>li {
 /*Media Queries*/
 /*For lagre screen size*/
 @media screen and (min-width: 1200px){
+
+	#board, #year , #percent{
+	    width: 20%;
+	    font-size: 1vw;
+	    padding: 5px;
+	}
+	
+	#rank {
+		width: 29%;
+		font-size: 1vw;
+	    padding: 5px;
+	}
     
 }/*end large*/
 
 
 /*For medium screen size*/
 @media screen and (min-width: 992px) and (max-width: 1199px){
+
+	#board, #year , #percent{
+	    width: 20%;
+	    font-size: 1vw;
+	    padding: 5px;
+	}
+	
+	#rank {
+		width: 29%;
+		font-size: 1vw;
+	    padding: 5px;
+	}
 	
      
 }/*end medium*/
@@ -395,7 +456,18 @@ ul>li {
 
 /*For small screen size*/
 @media screen and (min-width: 768px) and (max-width: 991px){
+
+	#board, #year , #percent{
+	    width: 20%;
+	    font-size: 1vw;
+	    padding: 5px;
+	}
 	
+	#rank {
+		width: 29%;
+		font-size: 1vw;
+	    padding: 5px;
+	}
 	
 	
 }/*end  small*/
@@ -403,6 +475,12 @@ ul>li {
 
 /*For extra small screen size*/
 @media screen and (max-width: 767px){
+
+	#board ,#year, #percent ,#rank {
+	    width: 100%%;
+	    font-size: 13px;
+	    padding: 15px;
+	}
 
   
 }/*end  extra small*/

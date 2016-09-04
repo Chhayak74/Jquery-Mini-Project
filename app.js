@@ -402,7 +402,97 @@
      
      var template1html =function(user){
 
-            var html = 
+        //Get curricular value
+        var curricularValue = '';
+        if(user.curricular.constructor===Array){
+            // console.log("Array");
+            user.curricular.forEach(function(c){
+                        curricularValue += "<li>"+c+"</li>";
+                        // console.log("<li>"+c+"</li>");
+                        // console.log("index of"+c+":"+""+user.curricular.indexOf(c));
+                    });
+           
+        }else{
+            console.log("Not Array");
+            curricularValue = "<li>"+user.curricular+"</li>";
+                                  
+        }//end get curricular value
+
+
+        //Get project value
+        var projectValue = '';
+        if(user.pro_name.constructor===Array){
+
+            $.each(user.pro_name, function(i, item) {
+                console.log(user.pro_name[i], user.pro_skills[i]);
+                    projectValue += '<li>Project '+(i+1)+':'+
+                                       '<ul>'+
+                                           '<li>'+user.pro_name[i]+'</li>'+
+                                           '<li>'+user.pro_skills[i]+'</li>'+
+                                        '</ul>'+
+                                   '</li>';
+
+            });
+            
+            
+        }else{
+            
+            projectValue = '<li>Project 1 :'+
+                                '<ul>'+
+                                   '<li>'+user.pro_name+'</li>'+
+                                   '<li>'+user.pro_skills+'</li>'+
+                                '</ul>'+
+                           '</li>';
+
+        }
+        //end get project value
+
+
+        //Get job value
+        var jobValue = '';
+        if(user.job_profile.constructor===Array){
+           
+           $.each(user.job_profile , function(i , item){
+
+                jobValue += '<h4>Job '+(i+1)+':'+
+                            '<ul>'+
+                                '<li>'+ user.job_profile[i] +'</li>'+
+                                '<li>'+user.job_skills[i]+'</li>'+
+                                '<li>'+user.job_company[i]+'</li>'+
+                            '</ul>';
+
+           } );
+        }else{
+                jobValue =  '<h4>Job 1 :'+
+                            '<ul>'+
+                               '<li>'+ user.job_profile +'</li>'+
+                               '<li>'+user.job_skills+'</li>'+
+                               '<li>'+user.job_company+'</li>'+
+                            '</ul>';
+
+        }
+        //end get job value
+        
+
+        //Get achievement value
+        var achievementValue = '';
+        if(user.achievement.constructor===Array){
+            
+            $.each(user.achievement , function(i , item){
+
+                achievementValue += '<li>'+user.achievement[i]+'</li>';
+            });
+
+        }else{
+            achievementValue = '<li>'+user.achievement+'</li>';
+
+        }
+        //end get achievement value
+        
+        
+
+
+        var html = 
         '<!DOCTYPE html>'+
         '<html>'+
         '<head>'+
@@ -422,6 +512,19 @@
             'hr {'+
                 'border-color: black;'+
             '}'+
+            'h2{'+
+                'font-size: 20px;'+
+            '}'+
+            'h3{'+
+                'font-size: 14px;'+
+            '}'+
+            'h4{'+
+                'font-size: 11px;'+
+            '}'+
+
+            'ul>li {'+
+                'font-size: 11px;'+
+            '}'+
 
             '</style>'+
         '</head>'+
@@ -430,37 +533,22 @@
         '<hr>'+
         '<h3>WORK EXPERIENCE</h3>'+
         '<h4>Past Job Experience</h4>'+
-        '<ul>'+
-            '<li>'+ user.job_profile +'</li>'+
-            '<li>'+user.job_skills+'</li>'+
-            '<li>'+user.job_company+'</li>'+
-        '</ul>'+
+        '<ol>'+
+            
+            jobValue+
+
+        '</ol>'+
         '<h4>Projects</h4>'+
         '<ol>'+
-            '<li>Project 1:'+
-                '<ul>'+
-                    '<li>'+user.pro1_name+'</li>'+
-                    '<li>'+user.pro1_skills+'</li>'+
-                '</ul>'+
-            '</li>'+
-            '<li>Project 2:'+
-                '<ul>'+
-                    '<li>'+user.pro2_name+'</li>'+
-                    '<li>'+user.pro2_skills+'</li>'+
-                '</ul>'+
-            '</li>'+
-            '<li>Project 3:'+
-                '<ul>'+
-                    '<li>'+user.pro3_name+'</li>'+
-                    '<li>'+user.pro3_skills+'</li>'+
-                '</ul>'+
-            '</li>'+
+
+            projectValue+
+
         '</ol>'+
         '<h4>Achievements</h4>'+
         '<ul>'+
-            '<li>'+user.achievement1+'</li>'+
-            '<li>'+user.achievement2+'</li>'+
-            '<li>'+user.achievement3+'</li>'+
+
+           achievementValue+
+
         '</ul>'+
         '<h3>EDUCATIONAL QUALIFICATION</h3>'+
         '<table border="1px black solid"  cellspacing="0" cellpadding="7px"  >'+
@@ -480,15 +568,13 @@
             '<tr>'+
                 '<td>'+ user.gradboard +'</td>'+
                 '<td>'+ user.gradmarks +'</td>'+
-                '<td>'+ user.gradyear +'</td>'+
+                '<td>'+ user.high_year +'</td>'+
                 '<td>'+ user.gradper +'</td>'+
             '</tr>'+
         '</table>'+
         '<h3>EXTRA CURRICULAR ACTIVITIES AND ACHIEVEMENTS</h3>'+
         '<ul>'+
-            '<li>'+user.curricular1+'</li>'+
-            '<li>'+user.curricular2+'</li>'+
-            '<li>'+user.curricular3+'</li>'+
+            curricularValue+
         '</ul>'+
         '</body>'+
         '</html>'
@@ -508,6 +594,93 @@
      
      var template2html =function(user){
 
+        //Get curricular value
+        var curricularValue = '';
+        if(user.curricular.constructor===Array){
+            // console.log("Array");
+            user.curricular.forEach(function(c){
+                        curricularValue += "<li>"+c+"</li>";
+                        // console.log("<li>"+c+"</li>");
+                        // console.log("index of"+c+":"+""+user.curricular.indexOf(c));
+                    });
+           
+        }else{
+            console.log("Not Array");
+            curricularValue = "<li>"+user.curricular+"</li>";
+                                  
+        }//end get curricular value
+
+
+        //Get project value
+        var projectValue = '';
+        if(user.pro_name.constructor===Array){
+
+            $.each(user.pro_name, function(i, item) {
+                console.log(user.pro_name[i], user.pro_skills[i]);
+                    projectValue += '<li>Project '+(i+1)+':'+
+                                       '<ul>'+
+                                           '<li>'+user.pro_name[i]+'</li>'+
+                                           '<li>'+user.pro_skills[i]+'</li>'+
+                                        '</ul>'+
+                                   '</li>';
+
+            });
+            
+            
+        }else{
+            
+            projectValue = '<li>Project 1 :'+
+                                '<ul>'+
+                                   '<li>'+user.pro_name+'</li>'+
+                                   '<li>'+user.pro_skills+'</li>'+
+                                '</ul>'+
+                           '</li>';
+
+        }
+        //end get project value
+
+
+        //Get job value
+        var jobValue = '';
+        if(user.job_profile.constructor===Array){
+           
+           $.each(user.job_profile , function(i , item){
+
+                jobValue += '<h4>Job '+(i+1)+':'+
+                            '<ul>'+
+                                '<li>'+ user.job_profile[i] +'</li>'+
+                                '<li>'+user.job_skills[i]+'</li>'+
+                                '<li>'+user.job_company[i]+'</li>'+
+                            '</ul>';
+
+           } );
+        }else{
+                jobValue =  '<h4>Job 1 :'+
+                            '<ul>'+
+                               '<li>'+ user.job_profile +'</li>'+
+                               '<li>'+user.job_skills+'</li>'+
+                               '<li>'+user.job_company+'</li>'+
+                            '</ul>';
+
+        }
+        //end get job value
+        
+
+        //Get achievement value
+        var achievementValue = '';
+        if(user.achievement.constructor===Array){
+            
+            $.each(user.achievement , function(i , item){
+
+                achievementValue += '<li>'+user.achievement[i]+'</li>';
+            });
+
+        }else{
+            achievementValue = '<li>'+user.achievement+'</li>';
+
+        }
+        //end get achievement value
+
             var html = 
         '<!DOCTYPE html>'+
         '<html>'+
@@ -528,45 +701,43 @@
             'hr {'+
                 'border-color: black;'+
             '}'+
+            'h2{'+
+                'font-size: 20px;'+
+            '}'+
+            'h3{'+
+                'font-size: 14px;'+
+            '}'+
+            'h4{'+
+                'font-size: 11px;'+
+            '}'+
+
+            'ul>li {'+
+                'font-size: 11px;'+
+            '}'+
 
             '</style>'+
         '</head>'+
         '<body style="border: 1px solid; padding : 10px; margin:10px;">'+
-        '<h2 style="font-weight:normal ; text-align: center;">' + user.fullname +'<br>' + user.high_deg +' ,'+ user.high_spec +', '+ user.high_year +', <br>'+ user.mob_no+', '+ user.email +'</h2>'+
+        '<h2 style="font-weight:normal;font">' + user.fullname +'<br>' + user.high_deg +' ,'+ user.high_spec  +', '+ user.high_year +', <br>'+ user.mob_no+', '+ user.email +'</h2>'+
         '<hr>'+
         '<h3>WORK EXPERIENCE</h3>'+
         '<h4>Past Job Experience</h4>'+
-        '<ul>'+
-            '<li>'+ user.job_profile +'</li>'+
-            '<li>'+user.job_skills+'</li>'+
-            '<li>'+user.job_company+'</li>'+
-        '</ul>'+
+        '<ol>'+
+            
+            jobValue+
+
+        '</ol>'+
         '<h4>Projects</h4>'+
         '<ol>'+
-            '<li>Project 1:'+
-                '<ul>'+
-                    '<li>'+user.pro1_name+'</li>'+
-                    '<li>'+user.pro1_skills+'</li>'+
-                '</ul>'+
-            '</li>'+
-            '<li>Project 2:'+
-                '<ul>'+
-                    '<li>'+user.pro2_name+'</li>'+
-                    '<li>'+user.pro2_skills+'</li>'+
-                '</ul>'+
-            '</li>'+
-            '<li>Project 3:'+
-                '<ul>'+
-                    '<li>'+user.pro3_name+'</li>'+
-                    '<li>'+user.pro3_skills+'</li>'+
-                '</ul>'+
-            '</li>'+
+
+            projectValue+
+
         '</ol>'+
         '<h4>Achievements</h4>'+
         '<ul>'+
-            '<li>'+user.achievement1+'</li>'+
-            '<li>'+user.achievement2+'</li>'+
-            '<li>'+user.achievement3+'</li>'+
+
+           achievementValue+
+
         '</ul>'+
         '<h3>EDUCATIONAL QUALIFICATION</h3>'+
         '<table border="1px black solid"  cellspacing="0" cellpadding="7px"  >'+
@@ -586,15 +757,13 @@
             '<tr>'+
                 '<td>'+ user.gradboard +'</td>'+
                 '<td>'+ user.gradmarks +'</td>'+
-                '<td>'+ user.gradyear +'</td>'+
+                '<td>'+ user.high_year +'</td>'+
                 '<td>'+ user.gradper +'</td>'+
             '</tr>'+
         '</table>'+
         '<h3>EXTRA CURRICULAR ACTIVITIES AND ACHIEVEMENTS</h3>'+
         '<ul>'+
-            '<li>'+user.curricular1+'</li>'+
-            '<li>'+user.curricular2+'</li>'+
-            '<li>'+user.curricular3+'</li>'+
+            curricularValue+
         '</ul>'+
         '</body>'+
         '</html>'
@@ -612,6 +781,93 @@
      
      var template3html =function(user){
 
+        //Get curricular value
+        var curricularValue = '';
+        if(user.curricular.constructor===Array){
+            // console.log("Array");
+            user.curricular.forEach(function(c){
+                        curricularValue += "<li>"+c+"</li>";
+                        // console.log("<li>"+c+"</li>");
+                        // console.log("index of"+c+":"+""+user.curricular.indexOf(c));
+                    });
+           
+        }else{
+            console.log("Not Array");
+            curricularValue = "<li>"+user.curricular+"</li>";
+                                  
+        }//end get curricular value
+
+
+        //Get project value
+        var projectValue = '';
+        if(user.pro_name.constructor===Array){
+
+            $.each(user.pro_name, function(i, item) {
+                console.log(user.pro_name[i], user.pro_skills[i]);
+                    projectValue += '<li>Project '+(i+1)+':'+
+                                       '<ul>'+
+                                           '<li>'+user.pro_name[i]+'</li>'+
+                                           '<li>'+user.pro_skills[i]+'</li>'+
+                                        '</ul>'+
+                                   '</li>';
+
+            });
+            
+            
+        }else{
+            
+            projectValue = '<li>Project 1 :'+
+                                '<ul>'+
+                                   '<li>'+user.pro_name+'</li>'+
+                                   '<li>'+user.pro_skills+'</li>'+
+                                '</ul>'+
+                           '</li>';
+
+        }
+        //end get project value
+
+
+        //Get job value
+        var jobValue = '';
+        if(user.job_profile.constructor===Array){
+           
+           $.each(user.job_profile , function(i , item){
+
+                jobValue += '<h4>Job '+(i+1)+':'+
+                            '<ul>'+
+                                '<li>'+ user.job_profile[i] +'</li>'+
+                                '<li>'+user.job_skills[i]+'</li>'+
+                                '<li>'+user.job_company[i]+'</li>'+
+                            '</ul>';
+
+           } );
+        }else{
+                jobValue =  '<h4>Job 1 :'+
+                            '<ul>'+
+                               '<li>'+ user.job_profile +'</li>'+
+                               '<li>'+user.job_skills+'</li>'+
+                               '<li>'+user.job_company+'</li>'+
+                            '</ul>';
+
+        }
+        //end get job value
+        
+
+        //Get achievement value
+        var achievementValue = '';
+        if(user.achievement.constructor===Array){
+            
+            $.each(user.achievement , function(i , item){
+
+                achievementValue += '<li>'+user.achievement[i]+'</li>';
+            });
+
+        }else{
+            achievementValue = '<li>'+user.achievement+'</li>';
+
+        }
+        //end get achievement value
+
             var html = 
         '<!DOCTYPE html>'+
         '<html>'+
@@ -632,39 +888,37 @@
             'hr {'+
                 'border-color: black;'+
             '}'+
+            'h2{'+
+                'font-size: 20px;'+
+            '}'+
+            'h3{'+
+                'font-size: 14px;'+
+            '}'+
+            'h4{'+
+                'font-size: 11px;'+
+            '}'+
+
+            'ul>li {'+
+                'font-size: 11px;'+
+            '}'+
 
             '</style>'+
         '</head>'+
         '<body style="border: 1px solid; padding : 10px; margin:10px;">'+
-        '<h2 style="font-weight:normal ; text-align: center;">' + user.fullname +'<br>' + user.high_deg +' ,'+ user.high_spec +', '+ user.high_year +', <br>'+ user.mob_no+', '+ user.email +'</h2>'+
+        '<h2 style="font-weight:normal;font">' + user.fullname +'<br>' + user.high_deg +' ,'+ user.high_spec  +', '+ user.high_year +', <br>'+ user.mob_no+', '+ user.email +'</h2>'+
         '<hr>'+
         '<h3> WORK EXPERIENCE </h3>'+
         '<h4>Projects</h4>'+
         '<ol>'+
-            '<li>Project 1:'+
-                '<ul>'+
-                    '<li>'+user.pro1_name+'</li>'+
-                    '<li>'+user.pro1_skills+'</li>'+
-                '</ul>'+
-            '</li>'+
-            '<li>Project 2:'+
-                '<ul>'+
-                    '<li>'+user.pro2_name+'</li>'+
-                    '<li>'+user.pro2_skills+'</li>'+
-                '</ul>'+
-            '</li>'+
-            '<li>Project 3:'+
-                '<ul>'+
-                    '<li>'+user.pro3_name+'</li>'+
-                    '<li>'+user.pro3_skills+'</li>'+
-                '</ul>'+
-            '</li>'+
+
+            projectValue+
+
         '</ol>'+
         '<h4>Achievements</h4>'+
         '<ul>'+
-            '<li>'+user.achievement1+'</li>'+
-            '<li>'+user.achievement2+'</li>'+
-            '<li>'+user.achievement3+'</li>'+
+
+           achievementValue+
+
         '</ul>'+
         '<h3>EDUCATIONAL QUALIFICATION</h3>'+
         '<table border="1px black solid"  cellspacing="0" cellpadding="7px"  >'+
@@ -684,15 +938,13 @@
             '<tr>'+
                 '<td>'+ user.gradboard +'</td>'+
                 '<td>'+ user.gradmarks +'</td>'+
-                '<td>'+ user.gradyear +'</td>'+
+                '<td>'+ user.high_year +'</td>'+
                 '<td>'+ user.gradper +'</td>'+
             '</tr>'+
         '</table>'+
         '<h3>EXTRA CURRICULAR ACTIVITIES AND ACHIEVEMENTS</h3>'+
         '<ul>'+
-            '<li>'+user.curricular1+'</li>'+
-            '<li>'+user.curricular2+'</li>'+
-            '<li>'+user.curricular3+'</li>'+
+            curricularValue+
         '</ul>'+
         '</body>'+
         '</html>'
@@ -710,6 +962,93 @@
      
      var template4html =function(user){
 
+        //Get curricular value
+        var curricularValue = '';
+        if(user.curricular.constructor===Array){
+            // console.log("Array");
+            user.curricular.forEach(function(c){
+                        curricularValue += "<li>"+c+"</li>";
+                        // console.log("<li>"+c+"</li>");
+                        // console.log("index of"+c+":"+""+user.curricular.indexOf(c));
+                    });
+           
+        }else{
+            console.log("Not Array");
+            curricularValue = "<li>"+user.curricular+"</li>";
+                                  
+        }//end get curricular value
+
+
+        //Get project value
+        var projectValue = '';
+        if(user.pro_name.constructor===Array){
+
+            $.each(user.pro_name, function(i, item) {
+                console.log(user.pro_name[i], user.pro_skills[i]);
+                    projectValue += '<li>Project '+(i+1)+':'+
+                                       '<ul>'+
+                                           '<li>'+user.pro_name[i]+'</li>'+
+                                           '<li>'+user.pro_skills[i]+'</li>'+
+                                        '</ul>'+
+                                   '</li>';
+
+            });
+            
+            
+        }else{
+            
+            projectValue = '<li>Project 1 :'+
+                                '<ul>'+
+                                   '<li>'+user.pro_name+'</li>'+
+                                   '<li>'+user.pro_skills+'</li>'+
+                                '</ul>'+
+                           '</li>';
+
+        }
+        //end get project value
+
+
+        //Get job value
+        var jobValue = '';
+        if(user.job_profile.constructor===Array){
+           
+           $.each(user.job_profile , function(i , item){
+
+                jobValue += '<h4>Job '+(i+1)+':'+
+                            '<ul>'+
+                                '<li>'+ user.job_profile[i] +'</li>'+
+                                '<li>'+user.job_skills[i]+'</li>'+
+                                '<li>'+user.job_company[i]+'</li>'+
+                            '</ul>';
+
+           } );
+        }else{
+                jobValue =  '<h4>Job 1 :'+
+                            '<ul>'+
+                               '<li>'+ user.job_profile +'</li>'+
+                               '<li>'+user.job_skills+'</li>'+
+                               '<li>'+user.job_company+'</li>'+
+                            '</ul>';
+
+        }
+        //end get job value
+        
+
+        //Get achievement value
+        var achievementValue = '';
+        if(user.achievement.constructor===Array){
+            
+            $.each(user.achievement , function(i , item){
+
+                achievementValue += '<li>'+user.achievement[i]+'</li>';
+            });
+
+        }else{
+            achievementValue = '<li>'+user.achievement+'</li>';
+
+        }
+        //end get achievement value
+
             var html = 
         '<!DOCTYPE html>'+
         '<html>'+
@@ -730,6 +1069,19 @@
             'hr {'+
                 'border-color: black;'+
             '}'+
+            'h2{'+
+                'font-size: 20px;'+
+            '}'+
+            'h3{'+
+                'font-size: 14px;'+
+            '}'+
+            'h4{'+
+                'font-size: 11px;'+
+            '}'+
+
+            'ul>li {'+
+                'font-size: 11px;'+
+            '}'+
 
             '</style>'+
         '</head>'+
@@ -739,30 +1091,15 @@
         '<h3> WORK EXPERIENCE </h3>'+
         '<h4>Projects</h4>'+
         '<ol>'+
-            '<li>Project 1:'+
-                '<ul>'+
-                    '<li>'+user.pro1_name+'</li>'+
-                    '<li>'+user.pro1_skills+'</li>'+
-                '</ul>'+
-            '</li>'+
-            '<li>Project 2:'+
-                '<ul>'+
-                    '<li>'+user.pro2_name+'</li>'+
-                    '<li>'+user.pro2_skills+'</li>'+
-                '</ul>'+
-            '</li>'+
-            '<li>Project 3:'+
-                '<ul>'+
-                    '<li>'+user.pro3_name+'</li>'+
-                    '<li>'+user.pro3_skills+'</li>'+
-                '</ul>'+
-            '</li>'+
+
+            projectValue+
+
         '</ol>'+
         '<h4>Achievements</h4>'+
         '<ul>'+
-            '<li>'+user.achievement1+'</li>'+
-            '<li>'+user.achievement2+'</li>'+
-            '<li>'+user.achievement3+'</li>'+
+
+           achievementValue+
+
         '</ul>'+
         '<h3>EDUCATIONAL QUALIFICATION</h3>'+
         '<table border="1px black solid"  cellspacing="0" cellpadding="7px"  >'+
@@ -782,15 +1119,13 @@
             '<tr>'+
                 '<td>'+ user.gradboard +'</td>'+
                 '<td>'+ user.gradmarks +'</td>'+
-                '<td>'+ user.gradyear +'</td>'+
+                '<td>'+ user.high_year +'</td>'+
                 '<td>'+ user.gradper +'</td>'+
             '</tr>'+
         '</table>'+
         '<h3>EXTRA CURRICULAR ACTIVITIES AND ACHIEVEMENTS</h3>'+
         '<ul>'+
-            '<li>'+user.curricular1+'</li>'+
-            '<li>'+user.curricular2+'</li>'+
-            '<li>'+user.curricular3+'</li>'+
+            curricularValue+
         '</ul>'+
         '</body>'+
         '</html>'

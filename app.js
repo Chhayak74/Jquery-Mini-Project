@@ -413,7 +413,7 @@
                     });
            
         }else{
-            console.log("Not Array");
+            //console.log("Not Array");
             curricularValue = "<li>"+user.curricular+"</li>";
                                   
         }//end get curricular value
@@ -424,7 +424,7 @@
         if(user.pro_name.constructor===Array){
 
             $.each(user.pro_name, function(i, item) {
-                console.log(user.pro_name[i], user.pro_skills[i]);
+                //console.log(user.pro_name[i], user.pro_skills[i]);
                     projectValue += '<li>Project '+(i+1)+':'+
                                        '<ul>'+
                                            '<li>'+user.pro_name[i]+'</li>'+
@@ -605,7 +605,7 @@
                     });
            
         }else{
-            console.log("Not Array");
+            //console.log("Not Array");
             curricularValue = "<li>"+user.curricular+"</li>";
                                   
         }//end get curricular value
@@ -616,7 +616,7 @@
         if(user.pro_name.constructor===Array){
 
             $.each(user.pro_name, function(i, item) {
-                console.log(user.pro_name[i], user.pro_skills[i]);
+                //console.log(user.pro_name[i], user.pro_skills[i]);
                     projectValue += '<li>Project '+(i+1)+':'+
                                        '<ul>'+
                                            '<li>'+user.pro_name[i]+'</li>'+
@@ -792,7 +792,7 @@
                     });
            
         }else{
-            console.log("Not Array");
+            //console.log("Not Array");
             curricularValue = "<li>"+user.curricular+"</li>";
                                   
         }//end get curricular value
@@ -803,7 +803,7 @@
         if(user.pro_name.constructor===Array){
 
             $.each(user.pro_name, function(i, item) {
-                console.log(user.pro_name[i], user.pro_skills[i]);
+                //console.log(user.pro_name[i], user.pro_skills[i]);
                     projectValue += '<li>Project '+(i+1)+':'+
                                        '<ul>'+
                                            '<li>'+user.pro_name[i]+'</li>'+
@@ -973,7 +973,7 @@
                     });
            
         }else{
-            console.log("Not Array");
+            //console.log("Not Array");
             curricularValue = "<li>"+user.curricular+"</li>";
                                   
         }//end get curricular value
@@ -984,7 +984,7 @@
         if(user.pro_name.constructor===Array){
 
             $.each(user.pro_name, function(i, item) {
-                console.log(user.pro_name[i], user.pro_skills[i]);
+                //console.log(user.pro_name[i], user.pro_skills[i]);
                     projectValue += '<li>Project '+(i+1)+':'+
                                        '<ul>'+
                                            '<li>'+user.pro_name[i]+'</li>'+
@@ -1162,7 +1162,7 @@
          $('form#final').submit(function() {
             var userobj = JSON.stringify($('form').serializeObject());
             var user = JSON.parse(userobj);
-            console.log(user);
+            //console.log(user);
              //$('#result1 , #result2').text(userobj);
              $('#result1').html(template1html(user));
              $('#result2').html(template2html(user));

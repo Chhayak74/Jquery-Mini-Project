@@ -718,7 +718,7 @@
             '</style>'+
         '</head>'+
         '<body style="border: 1px solid; padding : 10px; margin:10px;">'+
-        '<h2 style="font-weight:normal;font">' + user.fullname +'<br>' + user.high_deg +' ,'+ user.high_spec  +', '+ user.high_year +', <br>'+ user.mob_no+', '+ user.email +'</h2>'+
+        '<h2 style="font-weight:normal ; text-align: center;">' + user.fullname +'<br>' + user.high_deg +' ,'+ user.high_spec +', '+ user.high_year +', <br>'+ user.mob_no+', '+ user.email +'</h2>'+
         '<hr>'+
         '<h3>WORK EXPERIENCE</h3>'+
         '<h4>Past Job Experience</h4>'+
@@ -905,7 +905,7 @@
             '</style>'+
         '</head>'+
         '<body style="border: 1px solid; padding : 10px; margin:10px;">'+
-        '<h2 style="font-weight:normal;font">' + user.fullname +'<br>' + user.high_deg +' ,'+ user.high_spec  +', '+ user.high_year +', <br>'+ user.mob_no+', '+ user.email +'</h2>'+
+        '<h2 style="font-weight:normal ; text-align: center;">' + user.fullname +'<br>' + user.high_deg +' ,'+ user.high_spec +', '+ user.high_year +', <br>'+ user.mob_no+', '+ user.email +'</h2>'+
         '<hr>'+
         '<h3> WORK EXPERIENCE </h3>'+
         '<h4>Projects</h4>'+

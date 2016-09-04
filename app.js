@@ -498,6 +498,9 @@
         '<head>'+
             '<title>Resume</title>'+
             '<style>'+
+            'body {'+
+                'font-size:11px;'+
+            '}'+
             'table {'+
                 'width:100%;'+
             '}'+
@@ -513,7 +516,7 @@
                 'border-color: black;'+
             '}'+
             'h2{'+
-                'font-size: 20px;'+
+                'font-size: 18px;'+
             '}'+
             'h3{'+
                 'font-size: 14px;'+
@@ -687,6 +690,9 @@
         '<head>'+
             '<title>Resume</title>'+
             '<style>'+
+            'body {'+
+                'font-size:11px;'+
+            '}'+
             'table {'+
                 'width:100%;'+
             '}'+
@@ -702,7 +708,7 @@
                 'border-color: black;'+
             '}'+
             'h2{'+
-                'font-size: 20px;'+
+                'font-size: 18px;'+
             '}'+
             'h3{'+
                 'font-size: 14px;'+
@@ -874,6 +880,9 @@
         '<head>'+
             '<title>Resume</title>'+
             '<style>'+
+            'body {'+
+                'font-size:11px;'+
+            '}'+
             'table {'+
                 'width:100%;'+
             '}'+
@@ -889,7 +898,7 @@
                 'border-color: black;'+
             '}'+
             'h2{'+
-                'font-size: 20px;'+
+                'font-size: 18px;'+
             '}'+
             'h3{'+
                 'font-size: 14px;'+
@@ -1055,6 +1064,9 @@
         '<head>'+
             '<title>Resume</title>'+
             '<style>'+
+            'body {'+
+                'font-size:11px;'+
+            '}'+
             'table {'+
                 'width:100%;'+
             '}'+
@@ -1070,7 +1082,7 @@
                 'border-color: black;'+
             '}'+
             'h2{'+
-                'font-size: 20px;'+
+                'font-size: 18px;'+
             '}'+
             'h3{'+
                 'font-size: 14px;'+

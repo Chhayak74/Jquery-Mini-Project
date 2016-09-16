@@ -144,37 +144,49 @@
 					<hr>
 				</div>
 				<div class="form_body">
-				  <form>
+				  <form id="first_form">
 					  <div class="form-group">
 						 <label for="name" >Full Name</label>
-	                     <input type="text" class="form-control" name="fullname"  required="" placeholder="">
+	                     <input type="text" class="form-control" name="fullname"  required="" placeholder=""  data-validation="length required " data-validation-length="min4">
+	                  </div>
+	                  <div class="form-group">
 	                     <label for="email">Email address</label>
-	                     <input type="email" class="form-control" name="email"  required="" placeholder="">
+	                     <input type="email" class="form-control" name="email" data-validation="required" required="" placeholder="">
+	                  </div>
+	                  <div class="form-group">
                          <label for="mobie number" >Mobile Number</label>
-	                     <input type="number" class="form-control" name="mob_no"  required="" placeholder="">
+	                     <input type="number" class="form-control" name="mob_no" data-validation="required" required="" placeholder="">
 					  </div>
 					  <div class="form-group">
 						 <h3>Highest Educational Qualification</h3>
 						 <br>
 						 <label for="degree" >Degree</label>
-						 <input type="text" class="form-control" name="high_deg"  required="" placeholder="">
-                         <label for="specialization" >Specialization</label>
-						 <input type="text" class="form-control" name="high_spec"  required="" placeholder="">
-                         <label for="year of comlpetion" >Year of Completion</label>
-						 <input type="number" class="form-control" name="high_year"  required="" placeholder="">
-                         <label for="board" >Board/University</label>
-				         <input type="text" class="form-control"  placeholder=""  required="" name="gradboard">
-                         <label for="marks" >Marks in % </label>
-	                     <input type="number" class="form-control"  placeholder=""  required="" name="gradmarks">
-                         <label for="achievement" >Achievement/Rank/Percentile</label>
-	                     <input type="text" class="form-control"  placeholder=""  name="gradper">
+						 <input type="text" class="form-control" name="high_deg" data-validation="required" required="" placeholder="">
 					  </div>
-				  </form>
-                  <form class="text-center">
-					  <button type="button" class="btn btn-default " id="next_primary">Next</button>
-                      <br>
-					  <br>
-				  </form>
+					  <div class="form-group">
+                         <label for="specialization" >Specialization</label>
+						 <input type="text" class="form-control" name="high_spec" data-validation="required" required="" placeholder="">
+					  </div>
+					  <div class="form-group">
+                         <label for="year of comlpetion" >Year of Completion</label>
+						 <input type="number" class="form-control" name="high_year" data-validation="required" required="" placeholder="">
+					  </div>
+					  <div class="form-group">
+                         <label for="board" >Board/University</label>
+				         <input type="text" class="form-control"  placeholder="" data-validation="required"  required="" name="gradboard">
+				      </div>
+				      <div class="form-group">
+                         <label for="marks" >Marks in % </label>
+	                     <input type="number" class="form-control"  placeholder="" data-validation="required" required="" name="gradmarks">
+	                  </div>
+	                  <div class="form-group">
+                         <label for="achievement" >Achievement/Rank/Percentile</label>
+	                     <input type="text" class="form-control" data-validation="required"  placeholder=""  name="gradper">
+					  </div>
+					  <!-- <button type="submit" class="btn btn-default " id="next_primary">Next</button> -->
+					  <input type="submit" name="Next">
+				  </form> 
+                  
 				</div>
 			</div>
 		</div>
@@ -554,6 +566,36 @@ function myFunction() {
 </script>
 <!-- end of script -->
 
+<!-- Plugin -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script>
+  /*$.validate({
+    lang: 'en'
+  });*/
+
+  $.validate({
+    form : '#first_form',
+    modules : 'security',
+    onError : function($form) {
+      alert('Validation of form '+$form.attr('id')+' failed!');
+      alert(JSON.stringify($form))
+    },
+    onSuccess : function($form) {
+      alert('The form '+$form.attr('id')+' is valid!');
+      return false; // Will stop the submission of the form
+    },
+    onValidate : function($form) {
+      return {
+        element : $('#some-input'),
+        message : 'This input has an invalid value for some reason'
+      }
+    },
+    onElementValidate : function(valid, $el, $form, errorMess) {
+      console.log('Input ' +$el.attr('name')+ ' is ' + ( valid ? 'VALID':'NOT VALID') );
+    }
+  });
+</script>
+<!-- end plugin -->
 
 
 </body>

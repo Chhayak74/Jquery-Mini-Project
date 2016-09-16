@@ -312,6 +312,10 @@ form h4 {
     word-spacing: -9px;
 }
 
+.has-error .help-block {
+	color: white;
+}
+
 /*end form styling*/
 
 /*Result Page*/

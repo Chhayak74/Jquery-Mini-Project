@@ -161,12 +161,14 @@
 
      // end Add_More
 
+     //validation
      
+     //end validation
 
 
      // Form Pagination
 
-     $('#marker1 , button#pre_exp').on('click' , function (event) {
+     $('#marker1 , button#pre_exp ').on('click' , function (event) {
          $('#marker1 span.glyphicon.glyphicon-map-marker').addClass('active_step');
          $('#marker2 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
          $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
@@ -182,23 +184,43 @@
 
      });
 
-
-     $('#marker2 , button#next_primary , button#pre_edu').on('click' , function (event) {
+     /*$('#first_form').validate({
+        onSuccess : function(event){
+            $('#marker2 span.glyphicon.glyphicon-map-marker').addClass('active_step');
+            $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
+            $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
+            $('#marker4 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
+            
+            $('#form2').show();
+            $("#form1").hide();
+            $("#form3").hide();
+            $("#form4").hide();
+            $("#result_container1").hide();
+            
+            $('#dash_container').hide();
+            event.preventDefault();
+        }
+     });
+*/
+    
+    /* $('#marker2 , button#pre_edu').on('click' , function (event) {
          $('#marker2 span.glyphicon.glyphicon-map-marker').addClass('active_step');
          $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
          $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
          $('#marker4 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-         // $('body').css({"background-image":"url('./images/vec2.jpg')" , "background-size":"contain"});
+         
          $('#form2').show();
          $("#form1").hide();
          $("#form3").hide();
          $("#form4").hide();
          $("#result_container1").hide();
-         //$("#result_container2").hide();
+        
          $('#dash_container').hide();
          event.preventDefault();
 
      });
+*/
+      // button#next_primary 
 
      $('#marker3 , button#pre_curricular , button#next_exp').on('click' , function (event) {
          $('#marker3 span.glyphicon.glyphicon-map-marker').addClass('active_step');

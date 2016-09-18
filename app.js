@@ -72,9 +72,9 @@
 
      //Add_More Button Control
      
-     $('form#work').submit( function(event){
+     $('#btn_work').on('click' , function(event){
 
-        var len = $(this).serializeArray().length;
+        var len = $('#work').serializeArray().length;
         var div = len/3;
         // $('#w1').text(len);
         $('#w'+div).html(
@@ -82,11 +82,15 @@
                      '<div class="form-group">'+
                          '<h4>Job'+ (div+1) + ' :</h4>'+
                          '<label for="" >Job Profile</label>'+
-                         '<input type="text" class="form-control"  placeholder="" name="job_profile">'+
+                         '<input type="text" class="form-control" required="" placeholder="" name="job_profile">'+
+                      '</div>'+
+                      '<div class="form-group">'+
                          '<label for="skills">Skills Involved</label>'+
-                         '<input type="text" class="form-control" placeholder="" name="job_skills">'+
+                         '<input type="text" class="form-control" required="" placeholder="" name="job_skills">'+
+                      '</div>'+
+                      '<div class="form-group">'+   
                          '<label for="company" >Company Name</label>'+
-                         '<input type="text" class="form-control"  placeholder="" name="job_company">'+
+                         '<input type="text" class="form-control" required="" placeholder="" name="job_company">'+
                       '</div>'
 
             );
@@ -101,9 +105,9 @@
      }); 
 
 
-     $('form#projects').submit( function(event){
+     $('#btn_project').on('click' ,  function(event){
 
-        var len = $(this).serializeArray().length;
+        var len = $('#projects').serializeArray().length;
         var div = len/2;
         // $('#w1').text(len);
         $('#p'+div).html(
@@ -111,10 +115,12 @@
                      '<div class="form-group">'+
                          '<h4>Project'+ (div+1) +'</h4>'+
                          '<label for="pro1_name" >Name of Project</label>'+
-                         '<input type="text" class="form-control"  placeholder="" name="pro_name">'+
+                         '<input type="text" class="form-control" required="" placeholder="" name="pro_name">'+
+                     '</div>'+
+                     '<div class="form-group">'+
                          '<label for="pro1_skills" >Skills Involved</label>'+
-                         '<input type="text" class="form-control"  placeholder="" name="pro_skills">'+
-                      '</div>'
+                         '<input type="text" class="form-control" required="" placeholder="" name="pro_skills">'+
+                     '</div>'
 
             );
         
@@ -128,11 +134,11 @@
      });
 
 
-     $('form#achievement').submit( function(event){
+     $('#btn_achievement').on('click' , function(event){
 
-        var len = $(this).serializeArray().length;
+        var len = $('#achievement').serializeArray().length;
 
-        $('#a'+len).html('<input type="text" class="form-control"  placeholder="Achievement..." name="achievement"><br>');
+        $('#a'+len).html('<input type="text" class="form-control" required="" placeholder="Achievement..." name="achievement"><br>');
         
         if(len==5) {
             $('#btn_achievement').on('click' , function(){
@@ -143,11 +149,11 @@
 
      }); 
 
-     $('form#curricular').submit( function(event){
+     $('#btn_curricular').on('click' , function(event){
 
-        var len = $(this).serializeArray().length;
+        var len = $('#curricular').serializeArray().length;
 
-        $('#c'+len).html('<input type="text" class="form-control"  placeholder="Acitvity and achievements..." name="curricular"><br>');
+        $('#c'+len).html('<input type="text" class="form-control" required="" placeholder="Acitvity and achievements..." name="curricular"><br>');
         
         if(len==5) {
             $('#btn_curricular').on('click' , function(){
@@ -161,9 +167,7 @@
 
      // end Add_More
 
-     //validation
      
-     //end validation
 
 
      // Form Pagination
@@ -184,26 +188,9 @@
 
      });
 
-     /*$('#first_form').validate({
-        onSuccess : function(event){
-            $('#marker2 span.glyphicon.glyphicon-map-marker').addClass('active_step');
-            $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-            $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-            $('#marker4 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-            
-            $('#form2').show();
-            $("#form1").hide();
-            $("#form3").hide();
-            $("#form4").hide();
-            $("#result_container1").hide();
-            
-            $('#dash_container').hide();
-            event.preventDefault();
-        }
-     });
-*/
+     
     
-    /* $('#marker2 , button#pre_edu').on('click' , function (event) {
+     $('#marker2 , button#pre_edu ' ).on('click' , function (event) {
          $('#marker2 span.glyphicon.glyphicon-map-marker').addClass('active_step');
          $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
          $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
@@ -219,10 +206,26 @@
          event.preventDefault();
 
      });
-*/
+
+     $( "#next_primary" ).submit(function(event){
+        $('#marker2 span.glyphicon.glyphicon-map-marker').addClass('active_step');
+        $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
+        $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
+        $('#marker4 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
+        
+        $('#form2').show();
+        $("#form1").hide();
+        $("#form3").hide();
+        $("#form4").hide();
+        $("#result_container1").hide();
+        
+        $('#dash_container').hide();
+        event.preventDefault();
+     });
+
       // button#next_primary 
 
-     $('#marker3 , button#pre_curricular , button#next_exp').on('click' , function (event) {
+     $('#marker3 , button#pre_curricular ').on('click' , function (event) {
          $('#marker3 span.glyphicon.glyphicon-map-marker').addClass('active_step');
          $('#marker2 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
          $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
@@ -238,8 +241,9 @@
          event.preventDefault();
 
      });
+     //button#next_exp
 
-     $('#marker4 , button#next_edu ').on('click' , function (event) {
+     $('#marker4 , button#next_edu').on('click' , function (event) {
          $('#marker4 span.glyphicon.glyphicon-map-marker').addClass('active_step');
          $('#marker2 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
          $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
@@ -1175,8 +1179,6 @@
      //end template4 html function
 
 
-     
-
          $.fn.serializeObject = function()
      {
          var o = {};
@@ -1194,29 +1196,122 @@
          return o;
      };
 
-     $(function() {
-         $('form#final').submit(function() {
+     
+
+
+
+     //validation
+
+    jQuery.validator.setDefaults({
+      debug: true,
+      success: "valid",
+      submitHandler : function(event){
+
+        if($('#form1').is(':visible')){
+
+                    $('#marker2 span.glyphicon.glyphicon-map-marker').addClass('active_step');
+                    $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
+                    $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
+                    $('#marker4 span.glyphicon.glyphicon-map-marker').removeClass('active_step');                   
+                    $('#form2').show();
+                    $("#form1").hide();
+                    $("#form3").hide();
+                    $("#form4").hide();
+                    $("#result_container1").hide();
+                    
+                    $('#dash_container').hide();
+                    
+        }else if($('#form2').is(':visible')){
+
+            $('#marker3 span.glyphicon.glyphicon-map-marker').addClass('active_step');
+            $('#marker2 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
+            $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
+            $('#marker4 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
+            $('#form3').show();
+            $("#form1").hide();
+            $("#form2").hide();
+            $("#form4").hide();
+            $("#result_container1").hide();
+            //$("#result_container2").hide();
+            $('#dash_container').hide();
+            //event.preventDefault();
+        }else if($('#form3').is(':visible')){
+
+            $('#marker4 span.glyphicon.glyphicon-map-marker').addClass('active_step');
+            $('#marker2 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
+            $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
+            $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
+            // $('body').css({"background-image":"url('./images/vec2.jpg')" , "background-size":"cover"});
+            $('#form4').show();
+            $("#form1").hide();
+            $("#form2").hide();
+            $("#form3").hide();
+            $("#result_container1").hide();
+            //$("#result_container2").hide();
+            $('#dash_container').hide();
+           
+        }else {
+
             var userobj = JSON.stringify($('form').serializeObject());
             var user = JSON.parse(userobj);
+            
             //console.log(user);
-             //$('#result1 , #result2').text(userobj);
-             $('#result1').html(template1html(user));
-             $('#result2').html(template2html(user));
-             $('#result3').html(template3html(user));
-             $('#result4').html(template4html(user));
-             $("#templates_part1").fadeIn(200);
-             $("#templates_part2").fadeIn(200);
-             $('li#temp').removeClass('active');
-             $('li#details').removeClass('active');
-             $('li#dash').removeClass('active');
-             $("#forms").hide();
-             $("#result_container1").hide();
-             // $('body').css({"background-image":"url('./images/vec2.jpg')" , "background-size":"contain"});
-             $('#dash_container').hide();
-             return false;
-         });
-     });
+            //$('#result1 , #result2').text(userobj);
+            $('#result1').html(template1html(user));
+            $('#result2').html(template2html(user));
+            $('#result3').html(template3html(user));
+            $('#result4').html(template4html(user));
+            $("#templates_part1").fadeIn(200);
+            $("#templates_part2").fadeIn(200);
+            $('li#temp').removeClass('active');
+            $('li#details').removeClass('active');
+            $('li#dash').removeClass('active');
+            $("#forms").hide();
+            $("#result_container1").hide();
+            // $('body').css({"background-image":"url('./images/vec2.jpg')" , "background-size":"contain"});
+            $('#dash_container').hide();
+        }
+        
+        event.preventDefault();
+        }//end submitHandler
+    });//end setDefaults
 
+    $('#third_form').on('submit' , function(event){
+       $('#marker4 span.glyphicon.glyphicon-map-marker').addClass('active_step');
+       $('#marker2 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
+       $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
+       $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
+       // $('body').css({"background-image":"url('./images/vec2.jpg')" , "background-size":"cover"});
+       $('#form4').show();
+       $("#form1").hide();
+       $("#form2").hide();
+       $("#form3").hide();
+       $("#result_container1").hide();
+       //$("#result_container2").hide();
+       $('#dash_container').hide();
+       event.preventDefault(); 
+    });
+    
+    $('#next_exp').on('click' , function(){
+        $('#work').submit();
+        $('#projects').submit();
+        $('#achievement').submit();
+        
+    });
+   
+    $('#done').on('click' , function(){
+        $('#curricular').submit();
+    });
+
+    $('#first_form').validate();
+    $('#work').validate();
+    $('#projects').validate();
+    $('#achievement').validate();
+    $('#curricular').validate(function(event){
+        event.preventDefault();
+    });
+    //end validation
+    
 
      
 

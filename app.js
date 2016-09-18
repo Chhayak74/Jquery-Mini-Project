@@ -1270,6 +1270,7 @@
             $("#result_container1").hide();
             // $('body').css({"background-image":"url('./images/vec2.jpg')" , "background-size":"contain"});
             $('#dash_container').hide();
+            return false;
         }
         
         event.preventDefault();

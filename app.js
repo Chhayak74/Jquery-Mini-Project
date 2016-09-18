@@ -82,7 +82,7 @@
                      '<div class="form-group">'+
                          '<h4>Job'+ (div+1) + ' :</h4>'+
                          '<label for="" >Job Profile</label>'+
-                         '<input type="text" class="form-control" required="" placeholder="" name="job_profile">'+
+                         '<input type="text" class="form-control" required=""  placeholder="" name="job_profile">'+
                       '</div>'+
                       '<div class="form-group">'+
                          '<label for="skills">Skills Involved</label>'+
@@ -115,7 +115,7 @@
                      '<div class="form-group">'+
                          '<h4>Project'+ (div+1) +'</h4>'+
                          '<label for="pro1_name" >Name of Project</label>'+
-                         '<input type="text" class="form-control" required="" placeholder="" name="pro_name">'+
+                         '<input type="text" class="form-control" required=""  placeholder="" name="pro_name">'+
                      '</div>'+
                      '<div class="form-group">'+
                          '<label for="pro1_skills" >Skills Involved</label>'+
@@ -1301,9 +1301,11 @@
    
     $('#done').on('click' , function(){
         $('#curricular').submit();
+        return false;
     });
 
     $('#first_form').validate();
+    $('.work_div').validate();
     $('#work').validate();
     $('#projects').validate();
     $('#achievement').validate();

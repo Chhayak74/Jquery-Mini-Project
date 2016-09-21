@@ -190,7 +190,7 @@
 
      
     
-     $('#marker2, button#pre_edu ' ).on('click' , function (event) {
+     $(' button#pre_edu ' ).on('click' , function (event) {
          $('#marker2 span.glyphicon.glyphicon-map-marker').addClass('active_step');        
          $('#form2').show();
          $("#form1").hide();

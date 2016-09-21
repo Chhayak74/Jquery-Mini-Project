@@ -11,7 +11,9 @@
             $("#result_container1").hide();
             $('body').css({"background-image":"url('./images/vec.jpg')" , "background-size":"cover"});
             $('#preview1 , #preview2, #preview3, #preview4' ).hide();
-            //$("#result_container2").hide();
+            $('#achievement').hide();
+            $('#projects').hide();
+            
           
             
 
@@ -188,7 +190,7 @@
 
      
     
-     $(' button#pre_edu ' ).on('click' , function (event) {
+     $('#marker2, button#pre_edu ' ).on('click' , function (event) {
          $('#marker2 span.glyphicon.glyphicon-map-marker').addClass('active_step');        
          $('#form2').show();
          $("#form1").hide();
@@ -1083,15 +1085,7 @@
                     
         }else if($('#form2').is(':visible')){
 
-            $('#marker3 span.glyphicon.glyphicon-map-marker').addClass('active_step');
-            $('#form3').show();
-            $("#form1").hide();
-            $("#form2").hide();
-            $("#form4").hide();
-            $("#result_container1").hide();
-            //$("#result_container2").hide();
-            $('#dash_container').hide();
-            //event.preventDefault();
+            
         }else if($('#form3').is(':visible')){
 
             $('#marker4 span.glyphicon.glyphicon-map-marker').addClass('active_step');
@@ -1100,7 +1094,6 @@
             $("#form2").hide();
             $("#form3").hide();
             $("#result_container1").hide();
-            //$("#result_container2").hide();
             $('#dash_container').hide();
            
         }else {
@@ -1272,23 +1265,22 @@
     $('#third_form').on('submit' , function(event){
        $('#marker4 span.glyphicon.glyphicon-map-marker').addClass('active_step');
 
-       // $('body').css({"background-image":"url('./images/vec2.jpg')" , "background-size":"cover"});
        $('#form4').show();
        $("#form1").hide();
        $("#form2").hide();
        $("#form3").hide();
        $("#result_container1").hide();
-       //$("#result_container2").hide();
+       
        $('#dash_container').hide();
        event.preventDefault(); 
     });
     
-    $('#next_exp').on('click' , function(){
+    /*$('#next_exp').on('click' , function(){
         $('#work').submit();
         $('#projects').submit();
         $('#achievement').submit();
         
-    });
+    });*/
    
     $('#done').on('click' , function(){
         $('#curricular').submit();
@@ -1296,19 +1288,63 @@
     });
 
     $('#first_form').validate();
-    $('.work_div').validate();
-    $('#work').validate();
-    $('#projects').validate();
-    $('#achievement').validate();
+    
     $('#curricular').validate(function(event){
         event.preventDefault();
     });
+
+    $("#work").validate({
+         submitHandler: function(event) {
+           // form.submit();
+           $('#projects').show();
+           $('#work').hide();
+           $('#achievement').hide();
+           event.preventDefault();
+         }
+    });
+
+    $("#projects").validate({
+         submitHandler: function(event) {
+           // form.submit();
+           $('#achievement').show();
+           $('#projects').hide();
+           event.preventDefault();
+         }
+    });
+
+    $('#pre_project').click(function(){
+        $('#work').show();
+        $('#projects').hide();
+        $('#achievement').hide();
+    });
+
+    $("#achievement").validate({
+         submitHandler: function(event) {
+           $('#marker3 span.glyphicon.glyphicon-map-marker').addClass('active_step');
+           $('#form3').show();
+           $("#form1").hide();
+           $("#form2").hide();
+           $("#form4").hide();
+           $("#result_container1").hide();
+           $('#dash_container').hide();
+           event.preventDefault();
+         }
+    });
+
+    $('#pre_achievement').click(function(){
+        $('#work').hide();
+        $('#projects').show();
+        $('#achievement').hide();
+    });
+
+    
     //end validation
     
-    $("#form1").show();
+    
+    
      
 
 
 
 
-  });//end main document
+  });//end main document    

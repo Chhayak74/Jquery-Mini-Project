@@ -1,4 +1,4 @@
- // main document ready function to check if dom is loaded fully or not
+// main document ready function to check if dom is loaded fully or not
   $( document ).ready(function() {
 
             $("#forms").hide();
@@ -22,6 +22,7 @@
             //Get Started
             $('#form, button#create_resume').on('click' , function () {
                 $('#forms').fadeIn(200);
+                $("#form1").show();
                 $('li#details').addClass('active');
                 $('li#dash').removeClass('active');
                 $('li#temp').removeClass('active');
@@ -82,15 +83,15 @@
                      '<div class="form-group">'+
                          '<h4>Job'+ (div+1) + ' :</h4>'+
                          '<label for="" >Job Profile</label>'+
-                         '<input type="text" class="form-control" required=""  placeholder="" name="job_profile">'+
+                         '<input type="text" class="form-control" required=""  placeholder="" name="job_profile'+(div+1)+'">'+
                       '</div>'+
                       '<div class="form-group">'+
                          '<label for="skills">Skills Involved</label>'+
-                         '<input type="text" class="form-control" required="" placeholder="" name="job_skills">'+
+                         '<input type="text" class="form-control" required="" placeholder="" name="job_skills'+(div+1)+'">'+
                       '</div>'+
                       '<div class="form-group">'+   
                          '<label for="company" >Company Name</label>'+
-                         '<input type="text" class="form-control" required="" placeholder="" name="job_company">'+
+                         '<input type="text" class="form-control" required="" placeholder="" name="job_company'+(div+1)+'">'+
                       '</div>'
 
             );
@@ -115,11 +116,11 @@
                      '<div class="form-group">'+
                          '<h4>Project'+ (div+1) +'</h4>'+
                          '<label for="pro1_name" >Name of Project</label>'+
-                         '<input type="text" class="form-control" required=""  placeholder="" name="pro_name">'+
+                         '<input type="text" class="form-control" required=""  placeholder="" name="pro_name'+(div+1)+'">'+
                      '</div>'+
                      '<div class="form-group">'+
                          '<label for="pro1_skills" >Skills Involved</label>'+
-                         '<input type="text" class="form-control" required="" placeholder="" name="pro_skills">'+
+                         '<input type="text" class="form-control" required="" placeholder="" name="pro_skills'+(div+1)+'">'+
                      '</div>'
 
             );
@@ -138,7 +139,7 @@
 
         var len = $('#achievement').serializeArray().length;
 
-        $('#a'+len).html('<input type="text" class="form-control" required="" placeholder="Achievement..." name="achievement"><br>');
+        $('#a'+len).html('<input type="text" class="form-control" required="" placeholder="Achievement..." name="achievement'+(len+1)+'"><br>');
         
         if(len==5) {
             $('#btn_achievement').on('click' , function(){
@@ -153,7 +154,7 @@
 
         var len = $('#curricular').serializeArray().length;
 
-        $('#c'+len).html('<input type="text" class="form-control" required="" placeholder="Acitvity and achievements..." name="curricular"><br>');
+        $('#c'+len).html('<input type="text" class="form-control" required="" placeholder="Acitvity and achievements..." name="curricular'+(len+1)+'"><br>');
         
         if(len==5) {
             $('#btn_curricular').on('click' , function(){
@@ -172,11 +173,8 @@
 
      // Form Pagination
 
-     $('#marker1 , button#pre_exp ').on('click' , function (event) {
+     $(' button#pre_exp ').on('click' , function (event) {
          $('#marker1 span.glyphicon.glyphicon-map-marker').addClass('active_step');
-         $('#marker2 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-         $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-         $('#marker4 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
          $('#form1').show();
          $("#form2").hide();
          $("#form3").hide();
@@ -190,12 +188,8 @@
 
      
     
-     $('#marker2 , button#pre_edu ' ).on('click' , function (event) {
-         $('#marker2 span.glyphicon.glyphicon-map-marker').addClass('active_step');
-         $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-         $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-         $('#marker4 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-         
+     $(' button#pre_edu ' ).on('click' , function (event) {
+         $('#marker2 span.glyphicon.glyphicon-map-marker').addClass('active_step');        
          $('#form2').show();
          $("#form1").hide();
          $("#form3").hide();
@@ -208,11 +202,7 @@
      });
 
      $( "#next_primary" ).submit(function(event){
-        $('#marker2 span.glyphicon.glyphicon-map-marker').addClass('active_step');
-        $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-        $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-        $('#marker4 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-        
+        $('#marker2 span.glyphicon.glyphicon-map-marker').addClass('active_step');        
         $('#form2').show();
         $("#form1").hide();
         $("#form3").hide();
@@ -223,38 +213,28 @@
         event.preventDefault();
      });
 
-      // button#next_primary 
+      
 
-     $('#marker3 , button#pre_curricular ').on('click' , function (event) {
+     $(' button#pre_curricular ').on('click' , function (event) {
          $('#marker3 span.glyphicon.glyphicon-map-marker').addClass('active_step');
-         $('#marker2 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-         $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-         $('#marker4 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-         // $('body').css({"background-image":"url('./images/vec2.jpg')" , "background-size":"contain"});
          $('#form3').show();
          $("#form1").hide();
          $("#form2").hide();
          $("#form4").hide();
          $("#result_container1").hide();
-         //$("#result_container2").hide();
          $('#dash_container').hide();
          event.preventDefault();
 
      });
-     //button#next_exp
+    
 
-     $('#marker4 , button#next_edu').on('click' , function (event) {
+     $(' button#next_edu').on('click' , function (event) {
          $('#marker4 span.glyphicon.glyphicon-map-marker').addClass('active_step');
-         $('#marker2 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-         $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-         $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-         // $('body').css({"background-image":"url('./images/vec2.jpg')" , "background-size":"cover"});
          $('#form4').show();
          $("#form1").hide();
          $("#form2").hide();
          $("#form3").hide();
          $("#result_container1").hide();
-         //$("#result_container2").hide();
          $('#dash_container').hide();
          event.preventDefault();
 
@@ -428,93 +408,64 @@
      
      // template1 html function
      
-     var template1html =function(user){
+     var template1html =function(user , job_profile , job_skills , job_company ,pro_name, pro_skills , achievement , curricular){
 
         //Get curricular value
+
         var curricularValue = '';
-        if(user.curricular.constructor===Array){
-            // console.log("Array");
-            user.curricular.forEach(function(c){
-                        curricularValue += "<li>"+c+"</li>";
-                        // console.log("<li>"+c+"</li>");
-                        // console.log("index of"+c+":"+""+user.curricular.indexOf(c));
-                    });
-           
-        }else{
-            //console.log("Not Array");
-            curricularValue = "<li>"+user.curricular+"</li>";
-                                  
-        }//end get curricular value
+
+        curricular.forEach(function(c){
+                                curricularValue += "<li>"+c+"</li>";
+                                // console.log("<li>"+c+"</li>");
+                                // console.log("index of"+c+":"+""+user.curricular.indexOf(c));
+                            });
+
+
+        //end get curricular value
 
 
         //Get project value
         var projectValue = '';
-        if(user.pro_name.constructor===Array){
+        $.each(pro_name, function(i, item) {
+            //console.log(user.pro_name[i], user.pro_skills[i]);
+                projectValue += '<li>Project '+(i+1)+':'+
+                                   '<ul>'+
+                                       '<li>'+pro_name[i]+'</li>'+
+                                       '<li>'+pro_skills[i]+'</li>'+
+                                    '</ul>'+
+                               '</li>';
 
-            $.each(user.pro_name, function(i, item) {
-                //console.log(user.pro_name[i], user.pro_skills[i]);
-                    projectValue += '<li>Project '+(i+1)+':'+
-                                       '<ul>'+
-                                           '<li>'+user.pro_name[i]+'</li>'+
-                                           '<li>'+user.pro_skills[i]+'</li>'+
-                                        '</ul>'+
-                                   '</li>';
+        });
 
-            });
-            
-            
-        }else{
-            
-            projectValue = '<li>Project 1 :'+
-                                '<ul>'+
-                                   '<li>'+user.pro_name+'</li>'+
-                                   '<li>'+user.pro_skills+'</li>'+
-                                '</ul>'+
-                           '</li>';
-
-        }
         //end get project value
 
 
         //Get job value
+
         var jobValue = '';
-        if(user.job_profile.constructor===Array){
-           
-           $.each(user.job_profile , function(i , item){
+        $.each(job_profile , function(i , item){
 
-                jobValue += '<h4>Job '+(i+1)+':'+
-                            '<ul>'+
-                                '<li>'+ user.job_profile[i] +'</li>'+
-                                '<li>'+user.job_skills[i]+'</li>'+
-                                '<li>'+user.job_company[i]+'</li>'+
-                            '</ul>';
+             jobValue += '<h4>Job '+(i+1)+':'+
+                         '<ul>'+
+                             '<li>'+ job_profile[i] +'</li>'+
+                             '<li>'+ job_skills[i] +'</li>'+
+                             '<li>'+ job_company[i] +'</li>'+
+                         '</ul>';
 
-           } );
-        }else{
-                jobValue =  '<h4>Job 1 :'+
-                            '<ul>'+
-                               '<li>'+ user.job_profile +'</li>'+
-                               '<li>'+user.job_skills+'</li>'+
-                               '<li>'+user.job_company+'</li>'+
-                            '</ul>';
+        });
 
-        }
+        
         //end get job value
         
 
         //Get achievement value
         var achievementValue = '';
-        if(user.achievement.constructor===Array){
-            
-            $.each(user.achievement , function(i , item){
+        $.each(achievement , function(i , item){
 
-                achievementValue += '<li>'+user.achievement[i]+'</li>';
-            });
+            achievementValue += '<li>'+ achievement[i] +'</li>';
+        });
 
-        }else{
-            achievementValue = '<li>'+user.achievement+'</li>';
-
-        }
+        
         //end get achievement value
         
         
@@ -623,93 +574,64 @@
 
      // template2 html function
      
-     var template2html =function(user){
+     var template2html =function(user , job_profile , job_skills , job_company ,pro_name, pro_skills , achievement , curricular){
 
         //Get curricular value
+
         var curricularValue = '';
-        if(user.curricular.constructor===Array){
-            // console.log("Array");
-            user.curricular.forEach(function(c){
-                        curricularValue += "<li>"+c+"</li>";
-                        // console.log("<li>"+c+"</li>");
-                        // console.log("index of"+c+":"+""+user.curricular.indexOf(c));
-                    });
-           
-        }else{
-            //console.log("Not Array");
-            curricularValue = "<li>"+user.curricular+"</li>";
-                                  
-        }//end get curricular value
+
+        curricular.forEach(function(c){
+                                curricularValue += "<li>"+c+"</li>";
+                                // console.log("<li>"+c+"</li>");
+                                // console.log("index of"+c+":"+""+user.curricular.indexOf(c));
+                            });
+
+
+        //end get curricular value
 
 
         //Get project value
         var projectValue = '';
-        if(user.pro_name.constructor===Array){
+        $.each(pro_name, function(i, item) {
+            //console.log(user.pro_name[i], user.pro_skills[i]);
+                projectValue += '<li>Project '+(i+1)+':'+
+                                   '<ul>'+
+                                       '<li>'+pro_name[i]+'</li>'+
+                                       '<li>'+pro_skills[i]+'</li>'+
+                                    '</ul>'+
+                               '</li>';
 
-            $.each(user.pro_name, function(i, item) {
-                //console.log(user.pro_name[i], user.pro_skills[i]);
-                    projectValue += '<li>Project '+(i+1)+':'+
-                                       '<ul>'+
-                                           '<li>'+user.pro_name[i]+'</li>'+
-                                           '<li>'+user.pro_skills[i]+'</li>'+
-                                        '</ul>'+
-                                   '</li>';
+        });
 
-            });
-            
-            
-        }else{
-            
-            projectValue = '<li>Project 1 :'+
-                                '<ul>'+
-                                   '<li>'+user.pro_name+'</li>'+
-                                   '<li>'+user.pro_skills+'</li>'+
-                                '</ul>'+
-                           '</li>';
-
-        }
         //end get project value
 
 
         //Get job value
+
         var jobValue = '';
-        if(user.job_profile.constructor===Array){
-           
-           $.each(user.job_profile , function(i , item){
+        $.each(job_profile , function(i , item){
 
-                jobValue += '<h4>Job '+(i+1)+':'+
-                            '<ul>'+
-                                '<li>'+ user.job_profile[i] +'</li>'+
-                                '<li>'+user.job_skills[i]+'</li>'+
-                                '<li>'+user.job_company[i]+'</li>'+
-                            '</ul>';
+             jobValue += '<h4>Job '+(i+1)+':'+
+                         '<ul>'+
+                             '<li>'+ job_profile[i] +'</li>'+
+                             '<li>'+ job_skills[i] +'</li>'+
+                             '<li>'+ job_company[i] +'</li>'+
+                         '</ul>';
 
-           } );
-        }else{
-                jobValue =  '<h4>Job 1 :'+
-                            '<ul>'+
-                               '<li>'+ user.job_profile +'</li>'+
-                               '<li>'+user.job_skills+'</li>'+
-                               '<li>'+user.job_company+'</li>'+
-                            '</ul>';
+        });
 
-        }
+        
         //end get job value
         
 
         //Get achievement value
         var achievementValue = '';
-        if(user.achievement.constructor===Array){
-            
-            $.each(user.achievement , function(i , item){
+        $.each(achievement , function(i , item){
 
-                achievementValue += '<li>'+user.achievement[i]+'</li>';
-            });
+            achievementValue += '<li>'+ achievement[i] +'</li>';
+        });
 
-        }else{
-            achievementValue = '<li>'+user.achievement+'</li>';
-
-        }
+        
         //end get achievement value
 
             var html = 
@@ -813,93 +735,64 @@
 
      // template3 html function
      
-     var template3html =function(user){
+     var template3html =function(user , job_profile , job_skills , job_company ,pro_name, pro_skills , achievement , curricular){
 
         //Get curricular value
+
         var curricularValue = '';
-        if(user.curricular.constructor===Array){
-            // console.log("Array");
-            user.curricular.forEach(function(c){
-                        curricularValue += "<li>"+c+"</li>";
-                        // console.log("<li>"+c+"</li>");
-                        // console.log("index of"+c+":"+""+user.curricular.indexOf(c));
-                    });
-           
-        }else{
-            //console.log("Not Array");
-            curricularValue = "<li>"+user.curricular+"</li>";
-                                  
-        }//end get curricular value
+
+        curricular.forEach(function(c){
+                                curricularValue += "<li>"+c+"</li>";
+                                // console.log("<li>"+c+"</li>");
+                                // console.log("index of"+c+":"+""+user.curricular.indexOf(c));
+                            });
+
+
+        //end get curricular value
 
 
         //Get project value
         var projectValue = '';
-        if(user.pro_name.constructor===Array){
+        $.each(pro_name, function(i, item) {
+            //console.log(user.pro_name[i], user.pro_skills[i]);
+                projectValue += '<li>Project '+(i+1)+':'+
+                                   '<ul>'+
+                                       '<li>'+pro_name[i]+'</li>'+
+                                       '<li>'+pro_skills[i]+'</li>'+
+                                    '</ul>'+
+                               '</li>';
 
-            $.each(user.pro_name, function(i, item) {
-                //console.log(user.pro_name[i], user.pro_skills[i]);
-                    projectValue += '<li>Project '+(i+1)+':'+
-                                       '<ul>'+
-                                           '<li>'+user.pro_name[i]+'</li>'+
-                                           '<li>'+user.pro_skills[i]+'</li>'+
-                                        '</ul>'+
-                                   '</li>';
+        });
 
-            });
-            
-            
-        }else{
-            
-            projectValue = '<li>Project 1 :'+
-                                '<ul>'+
-                                   '<li>'+user.pro_name+'</li>'+
-                                   '<li>'+user.pro_skills+'</li>'+
-                                '</ul>'+
-                           '</li>';
-
-        }
         //end get project value
 
 
         //Get job value
+
         var jobValue = '';
-        if(user.job_profile.constructor===Array){
-           
-           $.each(user.job_profile , function(i , item){
+        $.each(job_profile , function(i , item){
 
-                jobValue += '<h4>Job '+(i+1)+':'+
-                            '<ul>'+
-                                '<li>'+ user.job_profile[i] +'</li>'+
-                                '<li>'+user.job_skills[i]+'</li>'+
-                                '<li>'+user.job_company[i]+'</li>'+
-                            '</ul>';
+             jobValue += '<h4>Job '+(i+1)+':'+
+                         '<ul>'+
+                             '<li>'+ job_profile[i] +'</li>'+
+                             '<li>'+ job_skills[i] +'</li>'+
+                             '<li>'+ job_company[i] +'</li>'+
+                         '</ul>';
 
-           } );
-        }else{
-                jobValue =  '<h4>Job 1 :'+
-                            '<ul>'+
-                               '<li>'+ user.job_profile +'</li>'+
-                               '<li>'+user.job_skills+'</li>'+
-                               '<li>'+user.job_company+'</li>'+
-                            '</ul>';
+        });
 
-        }
+        
         //end get job value
         
 
         //Get achievement value
         var achievementValue = '';
-        if(user.achievement.constructor===Array){
-            
-            $.each(user.achievement , function(i , item){
+        $.each(achievement , function(i , item){
 
-                achievementValue += '<li>'+user.achievement[i]+'</li>';
-            });
+            achievementValue += '<li>'+ achievement[i] +'</li>';
+        });
 
-        }else{
-            achievementValue = '<li>'+user.achievement+'</li>';
-
-        }
+        
         //end get achievement value
 
             var html = 
@@ -997,93 +890,64 @@
 
      // template4 html function
      
-     var template4html =function(user){
+     var template4html =function(user , job_profile , job_skills , job_company ,pro_name, pro_skills , achievement , curricular){
 
         //Get curricular value
+
         var curricularValue = '';
-        if(user.curricular.constructor===Array){
-            // console.log("Array");
-            user.curricular.forEach(function(c){
-                        curricularValue += "<li>"+c+"</li>";
-                        // console.log("<li>"+c+"</li>");
-                        // console.log("index of"+c+":"+""+user.curricular.indexOf(c));
-                    });
-           
-        }else{
-            //console.log("Not Array");
-            curricularValue = "<li>"+user.curricular+"</li>";
-                                  
-        }//end get curricular value
+
+        curricular.forEach(function(c){
+                                curricularValue += "<li>"+c+"</li>";
+                                // console.log("<li>"+c+"</li>");
+                                // console.log("index of"+c+":"+""+user.curricular.indexOf(c));
+                            });
+
+
+        //end get curricular value
 
 
         //Get project value
         var projectValue = '';
-        if(user.pro_name.constructor===Array){
+        $.each(pro_name, function(i, item) {
+            //console.log(user.pro_name[i], user.pro_skills[i]);
+                projectValue += '<li>Project '+(i+1)+':'+
+                                   '<ul>'+
+                                       '<li>'+pro_name[i]+'</li>'+
+                                       '<li>'+pro_skills[i]+'</li>'+
+                                    '</ul>'+
+                               '</li>';
 
-            $.each(user.pro_name, function(i, item) {
-                //console.log(user.pro_name[i], user.pro_skills[i]);
-                    projectValue += '<li>Project '+(i+1)+':'+
-                                       '<ul>'+
-                                           '<li>'+user.pro_name[i]+'</li>'+
-                                           '<li>'+user.pro_skills[i]+'</li>'+
-                                        '</ul>'+
-                                   '</li>';
+        });
 
-            });
-            
-            
-        }else{
-            
-            projectValue = '<li>Project 1 :'+
-                                '<ul>'+
-                                   '<li>'+user.pro_name+'</li>'+
-                                   '<li>'+user.pro_skills+'</li>'+
-                                '</ul>'+
-                           '</li>';
-
-        }
         //end get project value
 
 
         //Get job value
+
         var jobValue = '';
-        if(user.job_profile.constructor===Array){
-           
-           $.each(user.job_profile , function(i , item){
+        $.each(job_profile , function(i , item){
 
-                jobValue += '<h4>Job '+(i+1)+':'+
-                            '<ul>'+
-                                '<li>'+ user.job_profile[i] +'</li>'+
-                                '<li>'+user.job_skills[i]+'</li>'+
-                                '<li>'+user.job_company[i]+'</li>'+
-                            '</ul>';
+             jobValue += '<h4>Job '+(i+1)+':'+
+                         '<ul>'+
+                             '<li>'+ job_profile[i] +'</li>'+
+                             '<li>'+ job_skills[i] +'</li>'+
+                             '<li>'+ job_company[i] +'</li>'+
+                         '</ul>';
 
-           } );
-        }else{
-                jobValue =  '<h4>Job 1 :'+
-                            '<ul>'+
-                               '<li>'+ user.job_profile +'</li>'+
-                               '<li>'+user.job_skills+'</li>'+
-                               '<li>'+user.job_company+'</li>'+
-                            '</ul>';
+        });
 
-        }
+        
         //end get job value
         
 
         //Get achievement value
         var achievementValue = '';
-        if(user.achievement.constructor===Array){
-            
-            $.each(user.achievement , function(i , item){
+        $.each(achievement , function(i , item){
 
-                achievementValue += '<li>'+user.achievement[i]+'</li>';
-            });
+            achievementValue += '<li>'+ achievement[i] +'</li>';
+        });
 
-        }else{
-            achievementValue = '<li>'+user.achievement+'</li>';
-
-        }
+        
         //end get achievement value
 
             var html = 
@@ -1209,24 +1073,17 @@
 
         if($('#form1').is(':visible')){
 
-                    $('#marker2 span.glyphicon.glyphicon-map-marker').addClass('active_step');
-                    $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-                    $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-                    $('#marker4 span.glyphicon.glyphicon-map-marker').removeClass('active_step');                   
-                    $('#form2').show();
-                    $("#form1").hide();
-                    $("#form3").hide();
-                    $("#form4").hide();
-                    $("#result_container1").hide();
-                    
-                    $('#dash_container').hide();
+            $('#marker2 span.glyphicon.glyphicon-map-marker').addClass('active_step');
+            $('#form2').show();
+            $("#form1").hide();
+            $("#form3").hide();
+            $("#form4").hide();
+            $("#result_container1").hide();    
+            $('#dash_container').hide();
                     
         }else if($('#form2').is(':visible')){
 
             $('#marker3 span.glyphicon.glyphicon-map-marker').addClass('active_step');
-            $('#marker2 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-            $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-            $('#marker4 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
             $('#form3').show();
             $("#form1").hide();
             $("#form2").hide();
@@ -1238,10 +1095,6 @@
         }else if($('#form3').is(':visible')){
 
             $('#marker4 span.glyphicon.glyphicon-map-marker').addClass('active_step');
-            $('#marker2 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-            $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-            $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-            // $('body').css({"background-image":"url('./images/vec2.jpg')" , "background-size":"cover"});
             $('#form4').show();
             $("#form1").hide();
             $("#form2").hide();
@@ -1254,13 +1107,151 @@
 
             var userobj = JSON.stringify($('form').serializeObject());
             var user = JSON.parse(userobj);
-            
+            var job_profile = [];
+            var job_company = [];
+            var job_skills = [];
+            var pro_name = [];
+            var pro_skills = [];
+            var achievement = [];
+            var curricular = [];
+
+            job_profile.push(user.job_profile1);
+            job_company.push(user.job_company1);
+            job_skills.push(user.job_skills1);
+
+            pro_name.push(user.pro_name1);
+            pro_skills.push(user.pro_skills1);
+
+            achievement.push(user.achievement1);
+
+            curricular.push(user.curricular1);
+
+            //check work divs and push in array
+            if($('#w1').is(':empty')){
+
+            }else{
+                job_profile.push(user.job_profile2);
+                job_company.push(user.job_company2);
+                job_skills.push(user.job_skills2);
+            }
+
+            if($('#w2').is(':empty')){
+
+            }else{
+                job_profile.push(user.job_profile3);
+                job_company.push(user.job_company3);
+                job_skills.push(user.job_skills3);
+            }
+
+            if($('#w3').is(':empty')){
+
+            }else{
+                job_profile.push(user.job_profile4);
+                job_company.push(user.job_company4);
+                job_skills.push(user.job_skills4);
+            }
+
+            if($('#w4').is(':empty')){
+
+            }else{
+                job_profile.push(user.job_profile5);
+                job_company.push(user.job_company5);
+                job_skills.push(user.job_skills5);
+            }
+            // end check work divs
+
+            //check project divs
+            if($('#p1').is(':empty')){
+
+            }else{
+                pro_skills.push(user.pro_skills2);
+                pro_name.push(user.pro_name2);
+            }
+
+            if($('#p2').is(':empty')){
+
+            }else{
+                pro_skills.push(user.pro_skills3);
+                pro_name.push(user.pro_name3);
+            }
+
+            if($('#p3').is(':empty')){
+
+            }else{
+                pro_skills.push(user.pro_skills4);
+                pro_name.push(user.pro_name4);
+            }
+
+            if($('#p4').is(':empty')){
+
+            }else{
+                pro_skills.push(user.pro_skills5);
+                pro_name.push(user.pro_name5);
+            }
+            //end project divs
+
+            //check achievement divs
+            if($('#a1').is(':empty')){
+                //do nothing
+            }else{
+                achievement.push(user.achievement2);
+            }
+
+            if($('#a2').is(':empty')){
+                //do nothing
+            }else{
+                achievement.push(user.achievement3);
+            }
+
+            if($('#a3').is(':empty')){
+                //do nothing
+            }else{
+                achievement.push(user.achievement4);
+            }
+
+            if($('#a4').is(':empty')){
+                //do nothing
+            }else{
+                achievement.push(user.achievement5);
+            }
+
+            //end check achievement divs
+
+            //check curricular divs
+
+            if($('#c1').is(':empty')){
+                //do nothing
+            }else{
+                curricular.push(user.curricular2);
+            }
+
+            if($('#c2').is(':empty')){
+                //do nothing
+            }else{
+                curricular.push(user.curricular3);
+            }
+
+            if($('#c3').is(':empty')){
+                //do nothing
+            }else{
+                curricular.push(user.curricular4);
+            }
+
+            if($('#c4').is(':empty')){
+                //do nothing
+            }else{
+                curricular.push(user.curricular5);
+            }
+
+            //end check curricular divs
+
+
             //console.log(user);
             //$('#result1 , #result2').text(userobj);
-            $('#result1').html(template1html(user));
-            $('#result2').html(template2html(user));
-            $('#result3').html(template3html(user));
-            $('#result4').html(template4html(user));
+            $('#result1').html(template1html(user , job_profile , job_skills , job_company ,pro_name, pro_skills , achievement , curricular));
+            $('#result2').html(template2html(user , job_profile , job_skills , job_company ,pro_name, pro_skills , achievement , curricular));
+            $('#result3').html(template3html(user , job_profile , job_skills , job_company ,pro_name, pro_skills , achievement , curricular));
+            $('#result4').html(template4html(user , job_profile , job_skills , job_company ,pro_name, pro_skills , achievement , curricular));
             $("#templates_part1").fadeIn(200);
             $("#templates_part2").fadeIn(200);
             $('li#temp').removeClass('active');
@@ -1277,11 +1268,10 @@
         }//end submitHandler
     });//end setDefaults
 
+
     $('#third_form').on('submit' , function(event){
        $('#marker4 span.glyphicon.glyphicon-map-marker').addClass('active_step');
-       $('#marker2 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-       $('#marker3 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
-       $('#marker1 span.glyphicon.glyphicon-map-marker').removeClass('active_step');
+
        // $('body').css({"background-image":"url('./images/vec2.jpg')" , "background-size":"cover"});
        $('#form4').show();
        $("#form1").hide();
@@ -1315,7 +1305,7 @@
     });
     //end validation
     
-
+    $("#form1").show();
      
 
 

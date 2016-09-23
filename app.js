@@ -7,7 +7,7 @@
             $("#form4").hide();
             $("#form2").hide();
             $("#form3").hide();
-            $("#form1").show();
+            // $("#form1").show();
             $("#result_container1").hide();
             $('body').css({"background-image":"url('./images/vec.jpg')" , "background-size":"cover"});
             $('#preview1 , #preview2, #preview3, #preview4' ).hide();
@@ -1312,10 +1312,11 @@
          }
     });
 
-    $('#pre_project').click(function(){
+    $('#pre_project').click(function(event){
         $('#work').show();
         $('#projects').hide();
-        $('#achievement').hide();
+        $('#achievement').css({"display" : "none"});
+        event.preventDefault();
     });
 
     $("#achievement").validate({

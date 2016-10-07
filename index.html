@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>ResumeWidEdwisors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Atma|Kaushan+Script|Vampiro+One" rel="stylesheet">
+
+    
+</head>
+<body>
+
+<header>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">ResumeWithEdwisors</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active" id="dash"><a href="#" id="dashboard">Dashboard <span class="sr-only">(current)</span></a></li>
+        <li id="details"><a href="#" id="form">Get Started</a></li>
+        <li id="temp"><a href="#" id="show_templates">Templates</a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+</header>
+<!--==============================================================Dashboard  ================================================================= -->
+<div class="container" id="dash_container">
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10">
+			<div class="text-center">
+			      <span id="text_dash">ResumeWithEdwisors</span> <br><span id="text_dash_des">Free Online Resume Builder</span> <br>
+			      <p id="text_dash_sub">We direct and help you create your Professional , Industry Level Resumes</p> 
+			</div>
+			<br>
+			<br>
+			<div class="text-center">
+				<button class="btn btn-primary" id="create_resume">Create Resume</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--==============================================================End Dashboard ============================================================== -->
+
+
+
+<!--============================================================== Templates ============================================================== -->
+
+<div class="container" id="templates_part1">
+<div id="temp_head">
+	<h1 class="text-center" > Choose a template for your Resume</h1>
+</div>
+<br>
+<h3 class="bg-info text-center temp_subhead" id="">Resume Templates For Experienced</h3>
+<br>
+	<div>
+		<div id="temp_1">
+            <h1 id="temp1_text"><span class="glyphicon glyphicon-ok ok1"></span> Select</h1>
+            <a href="#"  ><button type="button" id="preview1" class="btn btn-default text-center" >Preview Resume</button></a>
+        </div>   
+		<div id="mid"></div>
+		<div id="temp_2" >
+			<h1 id="temp2_text"><span class="glyphicon glyphicon-ok ok2"></span> Select</h1>
+            <a href="#" ><button type="button" id="preview2" class="btn btn-default text-center" >Preview Resume</button></a>
+		</div>
+	</div>
+</div>
+
+<div class="container" id="templates_part2">
+<h3  class="bg-info text-center temp_subhead" >Resume Templates For Freshers</h3>
+<br>
+	<div>
+		<div id="temp_3">
+            <h1 id="temp3_text"><span class="glyphicon glyphicon-ok ok3"></span> Select</h1>
+        	<a href="#" data-toggle="tooltip" title="Select a template first"><button type="button" id="preview3" class="btn btn-default " >Preview Resume</button></a>
+		</div>
+		
+		<div id="mid"></div>
+		<div id="temp_4" >
+			<h1 id="temp4_text"><span class="glyphicon glyphicon-ok ok4"></span> Select</h1>
+			<a href="#" ><button type="button" id="preview4" class="btn btn-default text-center " >Preview Resume</button></a>
+		</div>
+	</div>	
+</div>
+
+
+<!--============================================================== End Templates =========================================================== -->
+                                                                      
+
+
+<!--=============================================================== Form Cards ==============================================================-->
+<div id="forms">
+    <h1 class="text-center" style="color:white; font-size:5vw; font-family:'Kaushan Script', cursive;"> Fill up following details for your resume :</h1>
+    
+    <br>
+	<!-- Form Pagination -->
+	<div class="container"  >
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-offset-2 col-xs-8 form_pagination">
+				<div class="header text-center" >
+				    <div class="invisible"></div>
+					<a href="#form1" id="marker1" ><span class="glyphicon glyphicon-map-marker active_step" aria-hidden="true"></span></a>
+	    	        <a href="#form2" id="marker2"><span id="" class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></a>
+	    	        <a href="#form3" id="marker3"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></a>
+	    	        <a href="#form4" id="marker4"><span  class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></a>
+	    	        <hr>
+				</div>
+			</div>
+		</div>
+	</div>
+    <!-- End Form Pagination -->
+
+
+	<!-- Form 1 -->
+	<div class="container" id="form1" >
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-offset-2 col-xs-8 form1">
+				<div class="header text-center">
+					<span id="step" >STEP 1</span> 
+	                
+					<br>
+					<span id="name">Primary Details </span>
+					<hr>
+				</div>
+				<div class="form_body">
+				  <form id="first_form">
+					  <div class="form-group">
+						 <label for="name" >Full Name</label>
+	                     <input type="text" class="form-control" name="fullname"  minlength="2"  required="" placeholder=""  >
+	                  </div>
+	                  <div class="form-group">
+	                     <label for="email">Email address</label>
+	                     <input type="email" class="form-control" name="email"  required="" placeholder="">
+	                  </div>
+	                  <div class="form-group">
+                         <label for="mobie number" >Mobile Number</label>
+	                     <input type="number" class="form-control" name="mob_no"  minlength="10"  required="" placeholder="">
+					  </div>
+					  <div class="form-group">
+						 <h3>Highest Educational Qualification</h3>
+						 <br>
+						 <label for="degree" >Degree</label>
+						 <input type="text" class="form-control" name="high_deg"  minlength="2"  required=""  placeholder="">
+					  </div>
+					  <div class="form-group">
+                         <label for="specialization" >Specialization</label>
+						 <input type="text" class="form-control" name="high_spec" required=""  minlength="2"   placeholder="">
+					  </div>
+					  <div class="form-group">
+                         <label for="year of comlpetion" >Year of Completion</label>
+						 <input type="number" class="form-control" name="high_year"  required="" placeholder="">
+					  </div>
+					  <div class="form-group">
+                         <label for="board" >Board/University</label>
+				         <input type="text" class="form-control"  placeholder=""  required="" name="gradboard">
+				      </div>
+				      <div class="form-group">
+                         <label for="marks" >Marks in % </label>
+	                     <input type="number" class="form-control"  placeholder="" required name="gradmarks">
+	                  </div>
+	                  <div class="form-group">
+                         <label for="achievement" >Achievement/Rank/Percentile</label>
+	                     <input type="text" class="form-control" placeholder="" required="" name="gradper">
+					  </div>
+					  <div class="text-center">
+					  <input type="submit" name="next" class="btn btn-default" id="next_primary" value="Next">
+					  </div>
+					  <br>
+					
+				  </form> 
+                      
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--  End Form1 -->
+
+
+	<!-- Form2 -->
+
+	<div class="container" id="form2" >
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-offset-2 col-xs-8 form2">
+				<div class="header text-center" >
+					<span id="step" >STEP 2</span> <br>
+					<span id="name">Experience <a href="" id="" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-info-sign " class="pull-right" aria-hidden="true"></span></a></span>
+					<hr>
+				</div>
+				<div class="form_body">	
+
+				  <!-- Work Experience --> 
+				  <form id="work"> 
+                      <h3>Work Experience :</h3>
+					  <div >
+					  	<div class="form-group">
+					     <h4>Job 1 :</h4>
+						 <label for="" >Job Profile</label>
+	                     <input type="text" class="form-control" class="profile" required="" placeholder="" name="job_profile1">
+	                  </div>
+	                  <div class="form-group">
+	                     <label for="skills">Skills Involved</label>
+	                     <input type="text" class="form-control" class="jobskill" required="" placeholder="" name="job_skills1">
+                      </div>
+                      <div class="form-group">
+                         <label for="company" >Company Name</label>
+	                     <input type="text" class="form-control" class="jobcompany" required="" placeholder="" name="job_company1">
+	                  </div>
+					  </div>
+
+
+	                  <div id="w1"></div>
+	                  <div id="w2"></div>
+	                  <div id="w3"></div>
+	                  <div id="w4"></div>
+
+                      <button  class="btn btn-xs glyphicon glyphicon-plus" id="btn_work"> Add More</button><br>
+	                  <div class="text-center">
+	                  	<input type="submit" class="btn btn-sm" name="next_work" value="Submit &amp; Next">
+	                  	<button type="button" class="btn btn-sm btn-default " id="pre_exp">Previous</button>
+	                  </div>
+	                  
+                  </form>
+                 
+                  <!-- end Work Experience -->
+
+
+	              <!-- Other Projects -->
+	              <form id="projects">
+					  <h3>Other Projects :</h3>
+					  <div class="form-group">
+					     <h4>Project 1</h4>
+						 <label for="pro1_name" >Name of Project</label>
+	                     <input type="text" class="form-control"  required="" placeholder="" name="pro_name1">
+	                  </div>
+	                  <div class="form-group">
+	                     <label for="pro1_skills" >Skills Involved</label>
+	                     <input type="text" class="form-control" placeholder="" required="" name="pro_skills1">
+	                  </div>
+	                  <div id="p1"></div>
+	                  <div id="p2"></div>
+	                  <div id="p3"></div>
+	                  <div id="p4"></div>
+	                  
+	                  <button  class="btn btn-xs glyphicon glyphicon-plus" id="btn_project"> Add More</button>
+	                  <br>
+	                  <div class="text-center">
+	                  	<input type="submit" class="btn btn-sm" name="next_project" value="Submit &amp; Next">
+	                  	<button class="btn btn-sm" id="pre_project">Previous</button>
+	                  </div>
+	              </form>
+	              
+	              <!-- end Other Projects -->
+
+                  <!-- Other Achievements / Leadership Roles -->
+				  <form id="achievement">  
+					  <h3>Other Achievements / Leadership Roles</h3>
+					  <div class="form-group">
+	                  <input type="text" class="form-control" required="" placeholder="Achievement..." name="achievement1"><br>
+	                  <div id="a1"></div>
+	                  <div id="a2"></div>
+	                  <div id="a3"></div>
+	                  <div id="a4"></div>
+	                  </div>
+	                  <button  class="btn btn-xs glyphicon glyphicon-plus" id="btn_achievement"> Add More</button>
+	                  <br>
+	                  <br>
+                      <!-- Main Buttons -->
+	                  <div class="text-center">
+	                  	<input type="submit" class="btn btn-default " id="next_exp">
+	                  	<button type="button" class="btn btn-default " id="pre_achievement">Previous</button>
+	                  </div>
+
+	                
+	              </form>
+	              
+	              <!-- end Other Achievements / Leadership Roles -->
+                
+                  <br>
+				</div>
+				<!-- end form body -->
+			</div>
+			<!-- end .form2 -->
+		</div> 
+		<!-- end row -->
+	</div>
+	<!--  End of Form2 -->
+
+
+
+	<!-- Form  3 -->
+	<div class="container" id="form3">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-offset-2 col-xs-8 form3">
+				<div class="header text-center" >
+					<span id="step" >STEP 3</span> <br>
+					<span id="name">Educational Details <a href="" id="" data-toggle="modal" data-target="#modal_edu"><span class="glyphicon glyphicon-info-sign " class="pull-right" aria-hidden="true"></span></a></span>
+					<hr>
+				</div>
+				<div class="form_body">
+				  <div id="error"></div>
+				  <form id="third_form">
+				      <h3>Matriculation/10th/Higher Secondary Exam :</h3>
+				      <div class="form-group form-inline" id="form_x">
+				         <label for="board" ></label>
+				         <input type="text" class="form-control" id="xboard" placeholder="Board/University"  required=""  name="xthboard">
+				         <label for="passingyear" > </label>
+	                     <input type="number" class="form-control" id="xyear" name="xthyear"  required="" placeholder="Year of passing"  >
+                         <label for="marks" ></label>
+	                     <input type="number" class="form-control" id="xpercent"  required="" placeholder="Marks in % " name="xthmarks">
+                         <label for="10thachievement" ></label>
+	                     <input type="text" class="form-control" required="" id="xrank" placeholder="Achievement/Rank/Percentile" name="xthper">
+				      </div>
+				
+					  <h3>Intermediate/10+2/Pre-University/Diploma Exam :</h3>
+
+                      <div class="form-group form-inline" id="form_xii">
+				         <label for="12board" ></label>
+				         <input type="text" class="form-control" id="xiiboard"  required="" placeholder="Board/University"  name="xiithboard">			    
+				         <label for="12passingyear" > </label>
+	                     <input type="number" class="form-control" id="xiiyear"  required="" name="xiithyear" placeholder="Year of passing">               
+                         <label for="12marks" > </label>
+	                     <input type="number" class="form-control" id="xiipercent"  required="" placeholder="Marks in %" name="xiithmarks">	      	                   
+                         <label for="12thachievement" ></label>
+	                     <input type="text" class="form-control" required="" id="xiirank" placeholder="Achievement/Rank/Percentile" name="xiithper">
+				      </div>
+
+					  <div class="text-center">
+					  
+					  <input type="submit" name="next3" class="btn btn-default" value="Next" id="next_edu">
+					  <button type="button" class="btn btn-default" id="pre_edu">Previous</button>
+
+					  </div>
+				      
+				   </form>
+				   <form class="text-center">
+					 <br>
+					  <!-- <button type="button" class="btn btn-default" id="next_edu">Next</button> -->
+	                  	                  <br>
+                     <br>
+				  </form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of form 3 -->
+
+
+	<!-- Form4 -->
+	<div class="container" id="form4">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-offset-2 col-xs-8 form">
+				<div class="header text-center" >
+					<span id="step" >STEP 4</span> <br>
+					<span id="name4">Extra Curricular Activities <br>&amp; Achievements <a href="" id="" data-toggle="modal" data-target="#modal_curricular"><span class="glyphicon glyphicon-info-sign " class="pull-right" aria-hidden="true"></span></a></span>
+					<hr>
+				</div>
+				<div class="form_body">
+				  <form id="curricular">
+					  <input type="text" class="form-control" required="" placeholder="Acitvity and achievements..." name="curricular1"><br>
+					  <div id="c1"></div>
+	                  <div id="c2"></div>
+	                  <div id="c3"></div>
+	                  <div id="c4"></div>
+
+	                  <button type="submit" class="btn glyphicon glyphicon-plus" id="btn_curricular"> Add More</button>
+	                  
+	              </form>
+                  
+                  <br>
+                  <br>
+
+	              <form id="final" class="text-center">
+
+					  <button type="submit" class="btn btn-default btn-primary" id="done">Done</button>
+	                  <button type="button" class="btn btn-default" id="pre_curricular">Previous</button>
+
+				  </form>
+				  <br>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of form4 -->
+
+
+</div>
+<!--===================================================================End Forms============================================================== -->
+
+<!-- ==================================================================MODALS================================================================= -->
+
+
+
+<!--Modal Educational Qualification   -->	
+<div class="container">
+    
+	<div class="modal" id="modal_edu">
+         <div class="modal-dialog modal-lg">
+         	<div class="modal-content">
+         		<div class="modal-header">
+         			<button type="button" class=" close " data-dismiss="modal">&times;</button>
+         			
+         			<h3 class="modal-title"> Educational Qualification</h3>
+         		</div>
+         		<div class="modal-body">
+         			<div class="points">
+         				<ol>
+         					<li>Qualification include your school, college, professional education.</li>
+         					<li>Don't forget to highlight ACHIEVEMENTS</li>
+         				</ol>
+         			</div>
+         			<div class="example"></div>
+         		</div>
+         		<div class="modal-footer">
+         			<a href="" class="btn btn-default" data-dismiss="modal">OK</a>
+         			
+         		</div>
+         	</div>
+         </div>
+    </div>
+</div>
+<!-- end modal Educational Qualification -->
+
+
+<!--  Modal Extra Curricular Activities and Achievements   -->	
+<div class="container">
+    
+	<div class="modal" id="modal_curricular">
+         <div class="modal-dialog modal-lg">
+         	<div class="modal-content">
+         		<div class="modal-header">
+         			<button type="button" class=" close " data-dismiss="modal">&times;</button>
+         			
+         			<h3 class="modal-title"> Extra Curricular Activities and Achievements</h3>
+         		</div>
+         		<div class="modal-body">
+         			<div class="points">
+         				<ol>
+         					<li>This is the last section, which includes sports, music, art, social work,debate etc.</li>
+         					<li>Don't forget to highlight ACHIEVEMENTS &amp; LEADERSHIP roles.</li>
+         				</ol>
+         				<hr>
+         				<div><h3>Some DO's and DO NOT's</h3></div>
+         				<div class="">
+         					<div class="row">
+         						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+         							<p><span class="glyphicon glyphicon-ok"></span> Read entrepreneurial books.<br>Was hiking lead in North East camp.<br>Was captain of college football team.</p>
+         							<p><span class="glyphicon glyphicon-ok"></span> Mention skills which you acquired outside of work and college life.</p>
+         							<p><span class="glyphicon glyphicon-ok"></span> Avoid mentioning work related skills which you link with some projects or internships.</p>
+         						</div>
+         						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+         							<p><span class="glyphicon glyphicon-remove"></span> Interests in reading ,writing, biking , hiking, gaming, movies, playing cricket, cooking, surfing.</p>
+         							<p><span class="glyphicon glyphicon-remove"></span> Part of local theater performing street plays on weekends.<br>Workwith xx old age home to monitor health statistics</p>
+         							<p><span class="glyphicon glyphicon-remove"></span> Adobe Photoshop, MS Excel, MS Word(this is not a skill anymore)</p>
+         						</div>
+         					</div>
+         				</div>
+         			</div>
+         			<hr>
+         			<h2>Examples : </h2>
+         			<div class="example">
+         				<ul>
+         					<li>
+         						<h3>Leadership qualities should come out in achievements wherever possible. </h3>
+         						<ol>
+         							<li>Organised Blood Donation camp and managed a team of 20 volunteers. </li>
+         							<li>Played as forward attacker in football team, scored the deciding goal of the tournament.</li>
+         							<li>Represented my college in inter-college literary fest.</li>
+         						</ol>
+         					</li>
+         				</ul>
+         			</div>
+         		</div>
+         		<div class="modal-footer">
+         			<a href="" class="btn btn-default" data-dismiss="modal">OK</a>
+         			
+         		</div>
+         	</div>
+         </div>
+    </div>
+</div>
+<!-- end modal Extra Curricular Activities and Achievements -->
+
+
+<!-- Modal Work Experience  -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Work Experience</h4>
+      </div>
+      <div class="modal-body">
+        <div class="points">
+        	<ol>
+        		<li>Experience can be from Internships, Projects , samll Entrepreneurial ventures you have taken in college.</li>
+        		<li>Experience should hignlight your ACHIEVEMENTS.</li>
+        		<li>Emphasize on points where you have played a LEADERSHIP role.</li>
+        	</ol>
+        </div>
+        <hr>
+        <h3>Work Experience section should be FACT BASED insight driven achievements :</h3>
+        <!-- <div class=""> -->
+        	<div class="row">
+        		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        			<h4>Fact based insight driven</h4>
+        			<ul> 
+        			    <br>
+        				<li>Played key role in identifying loss making rental division of a heavy construction equipment client and subsequently supported client in <strong>liquidation strategy</strong> to save <strong>INR 45 million annually</strong>.</li>
+        				<li>Performed research and analysis into <strong>financial inclusion, microfinance instituitions and innovative banking models across emerging countries -</strong> Africa, Brazil, China and India. </li>
+        				<li>Identified initiatives to drive 30% growth in revenue for brand plan of a pharma product.</li>
+        				<li>Manged and lead team of 5 junior engineers for a Big data project which was <strong>delivered a week before deadline.</strong></li>
+        			</ul>
+        		</div>
+        		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        			<h4>Non fact based non-insight statements</h4>
+        			<ul>
+        				<li> Saved millions of rupees in cost in a loss making rental divsion of a client.</li>
+                        <br>
+                        <br>
+                        <br>
+        				<li>Performed research and analytical work in my role for 2 years.</li>
+        				<br>
+        				<br>
+        				<br>
+        				<br>
+        				<li>Identified various intiatives for growth of a pharma product.</li>
+        				
+        				<br>
+        				<li>Worked with team of 5 junior engineers to deliver a project on Big Data technology.</li>
+        			</ul>
+        		</div>
+        	</div>
+        <!-- </div> -->
+        <hr>
+        <h2>Examples :</h2>
+        <div class="example">
+            <ul>
+            	<li>
+            		<h3>Leadership qualities should come out in achievements wherever possible. </h3>
+            		<ol>
+            			<li>Lead a team of 5 students in robotics tech fest and our team won the fastest flying droid award. </li>
+            			<li>Raised Rs 1 lakh from a corporate sponser single handedly for college fest.</li>
+            		</ol>
+            	</li>
+            </ul>
+        	
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end modal Work Experience -->
+
+<!-- ==========================================================END MODALS============================================================ -->
+
+
+<!-- Result -->
+<div class="container" id="result_container1">
+	<div class="row">
+		<div id="result1" ></div>
+		<div id="result2" ></div>
+		<div id="result3" ></div>
+		<div id="result4" ></div>
+		<br>
+		<br>
+		<div id="pdf">
+			<button class="btn btn-default" id="btn_pdf" onclick="myFunction()"> <span class="glyphicon glyphicon-save-file"></span>  Save as PDF</button>
+		</div>
+	</div>
+</div>
+<!-- End Result -->
+
+<form
+
+
+
+<!-- Script -->
+<script>
+function myFunction() {
+    window.print();
+}
+</script>
+<!-- end of script -->
+
+<!-- Validation Pliugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
+<script type="text/javascript">
+	</script>
+<!-- end validation plugin -->
+
+</body>
+</html>
